@@ -225,6 +225,17 @@ namespace Ventas
             fact.Show();
         }
 
+        private void reporteDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormReportCliente reportClient = new FormReportCliente();
+           reportClient.Id = this.id;
+           reportClient.Rol = this.rol;
+           reportClient.Nombre = this.nombre;
+            reportClient.Show();
+
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
