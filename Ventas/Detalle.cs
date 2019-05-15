@@ -12,7 +12,7 @@ namespace Ventas
 {
     public partial class Detalle : form.FormDetalle
     {
-        private int id, rol,accion,cantidad=0;
+        private int id, rol,accion,cantidad=0,idfact;
         private String nombre,cod;
 
         /**/
@@ -24,7 +24,8 @@ namespace Ventas
         private String tipo = "";
         /**/
         private String numeroFact;
-
+        /*para la factura*/
+        private Double sub,iva,total;
         /*array de productos*/
         private List<String> Codigo = new List<string>();
         private List<int> idproductoVenta = new List<int>();
@@ -74,31 +75,56 @@ namespace Ventas
             }
             else
             {
-                this.Hide();
-                /*encabezado factura*/
-                Factura fac = new Factura();
-                fac.Id = this.id;
-                fac.Nombre = this.nombre;
-                fac.Rol = this.rol;
+                if (this.accion.Equals(4)) {
+                    this.Hide();
+                    ActuFactu actu = new ActuFactu();
+                    actu.Id = this.id;
+                    actu.Nombre = this.nombre;
+                    actu.Rol = this.rol;
+                    actu.IdFact = this.idfact;
+                    actu.Accion = this.accion;
+                    actu.Show();
+                }
+                else {
+                    if (this.accion.Equals(5))
+                    {
+                        this.Hide();
+                        ActuFactu actu = new ActuFactu();
+                        actu.Id = this.id;
+                        actu.Nombre = this.nombre;
+                        actu.Rol = this.rol;
+                        actu.IdFact = this.idfact;
+                        actu.Accion = this.accion;
+                        actu.Show();
+                    }
+                    else {
+                        this.Hide();
+                        /*encabezado factura*/
+                        Factura fac = new Factura();
+                        fac.Id = this.id;
+                        fac.Nombre = this.nombre;
+                        fac.Rol = this.rol;
 
-                /*encabezado*/
-                fac.IdCliente = this.idCliente;
-                fac.NombreCliente = this.nombreCliente;
-                fac.Documento = this.documento;
-                fac.Direccion1 = this.Direccion;
-                fac.Telefono1 = this.Telefono;
-                fac.Tipo =this.tipo;
-                fac.NumeroFact = this.numeroFact;
-                fac.Codigo1 = this.Codigo;
-                /*detalle*/
-                fac.Idproducto = this.idproductoVenta;
-                fac.NombreProducto = this.nombreProducto;
-                fac.Cantidad = this.cantidadVendidad;
-                fac.Descuento = this.descuento;
-                fac.PrecioVenta = this.precioVenta;
-                fac.Totalproducto = this.totalproducto;
-                fac.SubTotal = this.subTotal;
-                fac.Show();
+                        /*encabezado*/
+                        fac.IdCliente = this.idCliente;
+                        fac.NombreCliente = this.nombreCliente;
+                        fac.Documento = this.documento;
+                        fac.Direccion1 = this.Direccion;
+                        fac.Telefono1 = this.Telefono;
+                        fac.Tipo = this.tipo;
+                        fac.NumeroFact = this.numeroFact;
+                        fac.Codigo1 = this.Codigo;
+                        /*detalle*/
+                        fac.Idproducto = this.idproductoVenta;
+                        fac.NombreProducto = this.nombreProducto;
+                        fac.Cantidad = this.cantidadVendidad;
+                        fac.Descuento = this.descuento;
+                        fac.PrecioVenta = this.precioVenta;
+                        fac.Totalproducto = this.totalproducto;
+                        fac.SubTotal = this.subTotal;
+                        fac.Show();
+                    }
+                }
             }
         }
 
@@ -106,7 +132,7 @@ namespace Ventas
         {
             int i;
             i = data.CurrentRow.Index;
-            if (this.Accion.Equals(1))
+            if (this.accion.Equals(1) || this.accion.Equals(4))
             {
                 txtCodigo.Text = data.Rows[i].Cells[0].Value.ToString();
                 txtNombre.Text = data.Rows[i].Cells[1].Value.ToString();
@@ -117,6 +143,7 @@ namespace Ventas
                 btnAgregar.Enabled = true;
             }
             else {
+                
                 txtDecuento.Enabled = true;
                 txtCantidad.Enabled = true;
                 lblTipo.Visible = false;
@@ -164,111 +191,226 @@ namespace Ventas
             }
             else
             {
-                if (txtDecuento.Text.Equals("") || txtCantidad.Text.Equals(""))
-                {
-                    MessageBox.Show("Dijite la cantidad y el Descuento");
+                if (this.accion.Equals(4))
+                {/*cambio de cliente */
+                    if (txtCodigo.Text.Equals("")) {
+                        MessageBox.Show("Seleccione el cliente nuevo");
+                    } else {
+                       
+                        try
+                        {
+                            DialogResult dialogo = MessageBox.Show("Decea Cambiar de Cliente", "Cambio", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogo == DialogResult.Yes)
+                            {
+                                modelo.CambioCliente cc = new modelo.CambioCliente();
+                                cc.Idfactura = this.idfact;
+                                
+                                cc.CodCliente1 = Convert.ToInt32(txtCodigo.Text);
+                                cc.facCamClien();
+                                if (cc.Msg.Equals("Se cambio el cliente"))
+                                {
+                                    MessageBox.Show(cc.Msg);
+                                  
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show(cc.Msg);
+                                }
+
+
+                            }
+                            else
+                           
+                            return;
+
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex);
+                        }
+                        this.Hide();
+                        ActuFactu ff = new ActuFactu();
+                        ff.IdFact = this.idfact;
+                        ff.Accion = this.accion;
+                        ff.Show();
+                    }
+
+
+
                 }
-                else
-                {
-                    int p = Convert.ToInt32(txtCantidad.Text);
-                   
-                    if (p > cantidad)
+                else {
+                    if (txtDecuento.Text.Equals("") || txtCantidad.Text.Equals(""))
                     {
-
-                        MessageBox.Show("La cantidad ingresada es mayor a la que ay en el Inventario");
-
+                        MessageBox.Show("Dijite la cantidad y el Descuento");
                     }
                     else
                     {
-                        int con = idproductoVenta.Count;
+                        int p = Convert.ToInt32(txtCantidad.Text);
 
-                        if (con.Equals(0))
+                        if (p > cantidad)
                         {
-                           
-                            idproductoVenta.Add(Convert.ToInt32(txtCodigo.Text));
-                            nombreProducto.Add(txtNombre.Text);
-                            CantidadVendidad.Add(Convert.ToInt32(txtCantidad.Text));
-                            Double desc = Convert.ToDouble(txtDecuento.Text) / 100;
-                            descuento.Add(Convert.ToDouble(txtDecuento.Text));
-                      
-                            PrecioVenta.Add(Convert.ToDouble(txtPrecio.Text));
 
-                            Double tott = Convert.ToDouble(txtPrecio.Text) * Convert.ToInt32(txtCantidad.Text);
-                            
-                            Double dessprod = tott * desc;
-                            tott = tott - dessprod;
-                            this.subTotal = subTotal + tott;
-                            totalproducto.Add(tott);
-                            Codigo.Add(cod);
-                         
-                            this.Hide();
-                            Factura factu = new Factura();
-                            factu.Id = this.id;
-                            factu.Nombre = this.nombre;
-                            factu.Rol = this.rol;
-                            factu.Idproducto = this.idproductoVenta;
-                            factu.NombreProducto = this.nombreProducto;
-                            factu.Cantidad = this.cantidadVendidad;
-                            factu.Descuento = this.descuento;
-                            factu.PrecioVenta = this.precioVenta;
-                            factu.Totalproducto = this.totalproducto;
-                            factu.SubTotal = this.subTotal;
-                            factu.Codigo1=this.Codigo;
-                            /*par el cliente*/
-                            factu.IdCliente = this.idCliente;
-                            factu.NombreCliente = this.nombreCliente;
-                            factu.Documento = this.documento;
-                            factu.Direccion1 = this.Direccion;
-                            factu.Telefono1 = this.Telefono;
-                            factu.Tipo = this.tipo;
-                            /*la factura*/
-                            factu.NumeroFact = this.numeroFact;
-                            factu.Show();
+                            MessageBox.Show("La cantidad ingresada es mayor a la que ay en el Inventario");
 
                         }
                         else
                         {
-                            Codigo.Add(cod);
-                          
-                            idproductoVenta.Add(Convert.ToInt32(txtCodigo.Text));
-                            nombreProducto.Add(txtNombre.Text);
-                            CantidadVendidad.Add(Convert.ToInt32(txtCantidad.Text));
-                            Double desc = Convert.ToDouble(txtDecuento.Text) / 100;
+                            if (this.accion.Equals(5))
+                            {
 
-                            descuento.Add(Convert.ToDouble(txtDecuento.Text));
-                            PrecioVenta.Add(Convert.ToDouble(txtPrecio.Text));
-                            Double tott = Convert.ToDouble(txtPrecio.Text) * Convert.ToInt32(txtCantidad.Text);
-                            this.subTotal = subTotal + tott;
+                                try
+                                {
+                                    DialogResult dialogo = MessageBox.Show("Decea Agregar el Producto", "Agregar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (dialogo == DialogResult.Yes)
+                                    {
+                                        /*para actualizar la factura */
+                                        modelo.CambioCliente ccc = new modelo.CambioCliente();
+                                        ccc.Idfactura = this.idfact;
+                                        ccc.Idproducto = Convert.ToInt32(txtCodigo.Text);
+                                        ccc.PrecioVenta = Convert.ToDouble(txtPrecio.Text);
+                                        ccc.Cantidad = Convert.ToInt32(txtCantidad.Text);
+                                        ccc.Descuento = Convert.ToDouble(txtDecuento.Text);
+                                        Double s, d, dd;
+                                        d = Convert.ToDouble(txtDecuento.Text) / 100;
+                                        s = Convert.ToInt32(txtCantidad.Text) * Convert.ToDouble(txtPrecio.Text);
+                                        
+                                        dd = s * d;
+                                        s = s - dd;
+                                       
+                                        ccc.Totalproducto = s;
 
-                            Totalproducto.Add(tott);
+                                        this.sub = this.sub + s;
+                                        this.iva = this.sub * 0.13;
+                                        this.total = this.sub + this.iva;
 
-                            this.Hide();
-                            Factura factu = new Factura();
-                            factu.Id = this.id;
-                            factu.Nombre = this.nombre;
-                            factu.Rol = this.rol;
-                            factu.Idproducto = this.idproductoVenta;
-                            factu.NombreProducto = this.nombreProducto;
-                            factu.Cantidad = this.cantidadVendidad;
-                            factu.Descuento = this.descuento;
-                            factu.PrecioVenta = this.precioVenta;
-                            factu.Totalproducto = this.totalproducto;
-                            factu.SubTotal = this.subTotal;
-                            factu.Codigo1 = this.Codigo;
-                            /*par el cliente*/
-                            factu.IdCliente = this.idCliente;
-                            factu.NombreCliente = this.nombreCliente;
-                            factu.Documento = this.documento;
-                            factu.Direccion1 = this.Direccion;
-                            factu.Telefono1 = this.Telefono;
-                            factu.Tipo = this.tipo;
-                            factu.NumeroFact = this.numeroFact;
-                            factu.Show();
+                                        ccc.Sub1 = this.sub;
+                                        ccc.Iva = this.iva;
+                                        ccc.Total = this.total;
+                                        ccc.cambioTotal();
+
+                                        if (ccc.Msg.Equals("Producto agregado "))
+                                        {
+                                        
+                                            MessageBox.Show(ccc.Msg);
+
+
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show(ccc.Msg);
+                                        }
+
+
+                                    }
+                                    else
+
+                                        return;
+
+                                }
+                                catch (Exception ex)
+                                {
+                                    Console.WriteLine(ex);
+                                }
+                                this.Hide();
+                                ActuFactu ff = new ActuFactu();
+                                ff.IdFact = this.idfact;
+                                ff.Accion = this.accion;
+                                ff.Show();
+
+                            }
+                            else {
+                                int con = idproductoVenta.Count;
+
+                                if (con.Equals(0))
+                                {
+
+                                    idproductoVenta.Add(Convert.ToInt32(txtCodigo.Text));
+                                    nombreProducto.Add(txtNombre.Text);
+                                    CantidadVendidad.Add(Convert.ToInt32(txtCantidad.Text));
+                                    Double desc = Convert.ToDouble(txtDecuento.Text) / 100;
+                                    descuento.Add(Convert.ToDouble(txtDecuento.Text));
+
+                                    PrecioVenta.Add(Convert.ToDouble(txtPrecio.Text));
+
+                                    Double tott = Convert.ToDouble(txtPrecio.Text) * Convert.ToInt32(txtCantidad.Text);
+
+                                    Double dessprod = tott * desc;
+                                    tott = tott - dessprod;
+                                    this.subTotal = subTotal + tott;
+                                    totalproducto.Add(tott);
+                                    Codigo.Add(cod);
+
+                                    this.Hide();
+                                    Factura factu = new Factura();
+                                    factu.Id = this.id;
+                                    factu.Nombre = this.nombre;
+                                    factu.Rol = this.rol;
+                                    factu.Idproducto = this.idproductoVenta;
+                                    factu.NombreProducto = this.nombreProducto;
+                                    factu.Cantidad = this.cantidadVendidad;
+                                    factu.Descuento = this.descuento;
+                                    factu.PrecioVenta = this.precioVenta;
+                                    factu.Totalproducto = this.totalproducto;
+                                    factu.SubTotal = this.subTotal;
+                                    factu.Codigo1 = this.Codigo;
+                                    /*par el cliente*/
+                                    factu.IdCliente = this.idCliente;
+                                    factu.NombreCliente = this.nombreCliente;
+                                    factu.Documento = this.documento;
+                                    factu.Direccion1 = this.Direccion;
+                                    factu.Telefono1 = this.Telefono;
+                                    factu.Tipo = this.tipo;
+                                    /*la factura*/
+                                    factu.NumeroFact = this.numeroFact;
+                                    factu.Show();
+
+                                }
+                                else
+                                {
+                                    Codigo.Add(cod);
+
+                                    idproductoVenta.Add(Convert.ToInt32(txtCodigo.Text));
+                                    nombreProducto.Add(txtNombre.Text);
+                                    CantidadVendidad.Add(Convert.ToInt32(txtCantidad.Text));
+                                    Double desc = Convert.ToDouble(txtDecuento.Text) / 100;
+
+                                    descuento.Add(Convert.ToDouble(txtDecuento.Text));
+                                    PrecioVenta.Add(Convert.ToDouble(txtPrecio.Text));
+                                    Double tott = Convert.ToDouble(txtPrecio.Text) * Convert.ToInt32(txtCantidad.Text);
+                                    this.subTotal = subTotal + tott;
+
+                                    Totalproducto.Add(tott);
+
+                                    this.Hide();
+                                    Factura factu = new Factura();
+                                    factu.Id = this.id;
+                                    factu.Nombre = this.nombre;
+                                    factu.Rol = this.rol;
+                                    factu.Idproducto = this.idproductoVenta;
+                                    factu.NombreProducto = this.nombreProducto;
+                                    factu.Cantidad = this.cantidadVendidad;
+                                    factu.Descuento = this.descuento;
+                                    factu.PrecioVenta = this.precioVenta;
+                                    factu.Totalproducto = this.totalproducto;
+                                    factu.SubTotal = this.subTotal;
+                                    factu.Codigo1 = this.Codigo;
+                                    /*par el cliente*/
+                                    factu.IdCliente = this.idCliente;
+                                    factu.NombreCliente = this.nombreCliente;
+                                    factu.Documento = this.documento;
+                                    factu.Direccion1 = this.Direccion;
+                                    factu.Telefono1 = this.Telefono;
+                                    factu.Tipo = this.tipo;
+                                    factu.NumeroFact = this.numeroFact;
+                                    factu.Show();
+
+                                }
+                            }
 
                         }
 
                     }
-
                 }
             }
         }
@@ -642,6 +784,58 @@ namespace Ventas
             }
         }
 
+        public int Idfact
+        {
+            get
+            {
+                return idfact;
+            }
+
+            set
+            {
+                idfact = value;
+            }
+        }
+
+        public double Sub
+        {
+            get
+            {
+                return sub;
+            }
+
+            set
+            {
+                sub = value;
+            }
+        }
+
+        public double Iva
+        {
+            get
+            {
+                return iva;
+            }
+
+            set
+            {
+                iva = value;
+            }
+        }
+
+        public double Total
+        {
+            get
+            {
+                return total;
+            }
+
+            set
+            {
+                total = value;
+            }
+        }
+
         private void Detalle_Load(object sender, EventArgs e)
         {
             if (this.Accion.Equals(1)) {
@@ -652,16 +846,28 @@ namespace Ventas
                 controlador.SelectClientFact cliente = new controlador.SelectClientFact();
                 cliente.clientesTodos(data);
             } else {
-                btnAgregar.Enabled = false;
-                lblTitulo.Text = "AGREGAR PRODUCTOS";
-                lblDirec.Text = "Precio";
-                lblDocum.Text = "Cantidad (eje: 5)";
-                lblTele.Text = "Descuento  (eje: 1)";
-                lblBuscar.Text = "Busqueda x Nombre Producto";
-                controlador.SelectClientFact producto = new controlador.SelectClientFact();
-                lblTipo.Visible = false;
-                txtTipo.Visible = false;
-                producto.producTodos(data);
+                if (this.accion.Equals(4))
+                {
+                    btnAgregar.Enabled = false;
+                    lblTitulo.Text = "CAMBIO DE CLIENTE EN LA FACTURA ";
+                    lblBuscar.Text = "Busqueda x Nombre Cliente";
+                    lblDirec.Text = "Direccion";
+                    controlador.SelectClientFact cliente = new controlador.SelectClientFact();
+                    cliente.clientesTodos(data);
+                }
+                else {
+                    btnAgregar.Enabled = false;
+                    lblTitulo.Text = "AGREGAR PRODUCTOS";
+                    lblDirec.Text = "Precio";
+                    lblDocum.Text = "Cantidad (eje: 5)";
+                    lblTele.Text = "Descuento  (eje: 1)";
+                    lblBuscar.Text = "Busqueda x Nombre Producto";
+                    controlador.SelectClientFact producto = new controlador.SelectClientFact();
+                    lblTipo.Visible = false;
+                    txtTipo.Visible = false;
+                    producto.producTodos(data);
+                }
+             
 
             }
         }

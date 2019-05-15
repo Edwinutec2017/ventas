@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActuFactu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActuFactu.Designer.cs">
+      <DependentUpon>ActuFactu.cs</DependentUpon>
+    </Compile>
     <Compile Include="BusquedaFact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,7 @@
     <Compile Include="controlador\CrudCliente.cs" />
     <Compile Include="controlador\CrudFactura.cs" />
     <Compile Include="controlador\CrudUser.cs" />
+    <Compile Include="controlador\FacClienselect.cs" />
     <Compile Include="controlador\SelecProduc.cs" />
     <Compile Include="controlador\SelectClientFact.cs" />
     <Compile Include="Detalle.cs">
@@ -142,6 +149,7 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelo\CambioCliente.cs" />
     <Compile Include="modelo\Clientes.cs" />
     <Compile Include="modelo\Factura.cs" />
     <Compile Include="modelo\InisioSeccion.cs" />
@@ -159,6 +167,9 @@
     <Compile Include="Usuarios.Designer.cs">
       <DependentUpon>Usuarios.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ActuFactu.resx">
+      <DependentUpon>ActuFactu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BusquedaFact.resx">
       <DependentUpon>BusquedaFact.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,7 +243,9 @@
     <Content Include="img\otros\carrito.png" />
     <Content Include="img\otros\cliente.png" />
     <Content Include="img\otros\db.png" />
+    <Content Include="img\otros\desconectar.png" />
     <Content Include="img\otros\eli.png" />
+    <Content Include="img\otros\ence.png" />
     <Content Include="img\otros\guardar.png" />
     <Content Include="img\otros\impresora.png" />
     <Content Include="img\otros\login.png" />

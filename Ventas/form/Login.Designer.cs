@@ -92,20 +92,20 @@
             this.btnSalir.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSalir.Image = global::Ventas.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(2, 279);
+            this.btnSalir.Image = global::Ventas.Properties.Resources.desconectar;
+            this.btnSalir.Location = new System.Drawing.Point(12, 273);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(71, 37);
+            this.btnSalir.Size = new System.Drawing.Size(40, 43);
             this.btnSalir.TabIndex = 6;
             this.btnSalir.UseVisualStyleBackColor = false;
             // 
             // btnInicio
             // 
             this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.Image = global::Ventas.Properties.Resources.login;
-            this.btnInicio.Location = new System.Drawing.Point(120, 198);
+            this.btnInicio.Image = global::Ventas.Properties.Resources.ence;
+            this.btnInicio.Location = new System.Drawing.Point(134, 198);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(85, 73);
+            this.btnInicio.Size = new System.Drawing.Size(53, 44);
             this.btnInicio.TabIndex = 2;
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.button1_Click);

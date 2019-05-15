@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupEncabezado = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnProducto = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
             this.chekCredito = new System.Windows.Forms.CheckBox();
             this.chekEfectivo = new System.Windows.Forms.CheckBox();
             this.lblPago = new System.Windows.Forms.Label();
@@ -60,9 +63,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnProducto = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
             this.groupEncabezado.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,38 @@
             this.groupEncabezado.TabStop = false;
             this.groupEncabezado.Text = "Encabezado Factura";
             // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnGuardar.Image = global::Ventas.Properties.Resources.guardar;
+            this.btnGuardar.Location = new System.Drawing.Point(688, 138);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(61, 49);
+            this.btnGuardar.TabIndex = 22;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            // 
+            // btnProducto
+            // 
+            this.btnProducto.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnProducto.Image = global::Ventas.Properties.Resources.carrito;
+            this.btnProducto.Location = new System.Drawing.Point(584, 138);
+            this.btnProducto.Name = "btnProducto";
+            this.btnProducto.Size = new System.Drawing.Size(70, 52);
+            this.btnProducto.TabIndex = 21;
+            this.btnProducto.UseVisualStyleBackColor = false;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCliente.Image = global::Ventas.Properties.Resources.cliente;
+            this.btnCliente.Location = new System.Drawing.Point(494, 136);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(63, 52);
+            this.btnCliente.TabIndex = 3;
+            this.btnCliente.UseVisualStyleBackColor = false;
+            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
             // chekCredito
             // 
             this.chekCredito.AutoSize = true;
@@ -112,6 +144,7 @@
             this.chekCredito.TabIndex = 20;
             this.chekCredito.Text = "Credito";
             this.chekCredito.UseVisualStyleBackColor = true;
+            this.chekCredito.Visible = false;
             // 
             // chekEfectivo
             // 
@@ -124,6 +157,7 @@
             this.chekEfectivo.TabIndex = 19;
             this.chekEfectivo.Text = "Efectivo";
             this.chekEfectivo.UseVisualStyleBackColor = true;
+            this.chekEfectivo.Visible = false;
             // 
             // lblPago
             // 
@@ -135,6 +169,7 @@
             this.lblPago.Size = new System.Drawing.Size(40, 15);
             this.lblPago.TabIndex = 18;
             this.lblPago.Text = "Pago";
+            this.lblPago.Visible = false;
             // 
             // txttipo
             // 
@@ -320,9 +355,9 @@
             // 
             this.groupDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupDetalle.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.groupDetalle.Location = new System.Drawing.Point(32, 282);
+            this.groupDetalle.Location = new System.Drawing.Point(18, 282);
             this.groupDetalle.Name = "groupDetalle";
-            this.groupDetalle.Size = new System.Drawing.Size(741, 198);
+            this.groupDetalle.Size = new System.Drawing.Size(755, 198);
             this.groupDetalle.TabIndex = 1;
             this.groupDetalle.TabStop = false;
             this.groupDetalle.Text = "Detalle Factura";
@@ -411,38 +446,7 @@
             this.btnHome.Size = new System.Drawing.Size(45, 35);
             this.btnHome.TabIndex = 2;
             this.btnHome.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnGuardar.Image = global::Ventas.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(688, 142);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(61, 45);
-            this.btnGuardar.TabIndex = 22;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // btnProducto
-            // 
-            this.btnProducto.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnProducto.Image = global::Ventas.Properties.Resources.carrito;
-            this.btnProducto.Location = new System.Drawing.Point(582, 138);
-            this.btnProducto.Name = "btnProducto";
-            this.btnProducto.Size = new System.Drawing.Size(60, 52);
-            this.btnProducto.TabIndex = 21;
-            this.btnProducto.UseVisualStyleBackColor = false;
-            // 
-            // btnCliente
-            // 
-            this.btnCliente.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCliente.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCliente.Image = global::Ventas.Properties.Resources.cliente;
-            this.btnCliente.Location = new System.Drawing.Point(473, 135);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(72, 55);
-            this.btnCliente.TabIndex = 3;
-            this.btnCliente.UseVisualStyleBackColor = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // FormFactura
             // 

@@ -46,6 +46,7 @@
             this.txtFact = new System.Windows.Forms.TextBox();
             this.lblFact = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -54,7 +55,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEli = new System.Windows.Forms.Button();
+            this.btnActu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -249,6 +251,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnActu);
+            this.groupBox2.Controls.Add(this.btnEli);
             this.groupBox2.Controls.Add(this.btnGuardar);
             this.groupBox2.Controls.Add(this.textBox9);
             this.groupBox2.Controls.Add(this.lblBuscar);
@@ -263,6 +267,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acccion";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Image = global::Ventas.Properties.Resources.guardar;
+            this.btnGuardar.Location = new System.Drawing.Point(499, 20);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(64, 57);
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Visible = false;
             // 
             // textBox9
             // 
@@ -285,9 +299,9 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = global::Ventas.Properties.Resources.impresora;
-            this.btnImprimir.Location = new System.Drawing.Point(663, 25);
+            this.btnImprimir.Location = new System.Drawing.Point(663, 20);
             this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(64, 54);
+            this.btnImprimir.Size = new System.Drawing.Size(64, 59);
             this.btnImprimir.TabIndex = 6;
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Visible = false;
@@ -295,7 +309,7 @@
             // btnTodos
             // 
             this.btnTodos.Image = global::Ventas.Properties.Resources.db;
-            this.btnTodos.Location = new System.Drawing.Point(547, 22);
+            this.btnTodos.Location = new System.Drawing.Point(583, 22);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(64, 57);
             this.btnTodos.TabIndex = 5;
@@ -342,15 +356,25 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnHome.UseVisualStyleBackColor = true;
             // 
-            // btnGuardar
+            // btnEli
             // 
-            this.btnGuardar.Image = global::Ventas.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(444, 20);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(64, 57);
-            this.btnGuardar.TabIndex = 18;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Visible = false;
+            this.btnEli.Image = global::Ventas.Properties.Resources.eli;
+            this.btnEli.Location = new System.Drawing.Point(416, 20);
+            this.btnEli.Name = "btnEli";
+            this.btnEli.Size = new System.Drawing.Size(64, 57);
+            this.btnEli.TabIndex = 19;
+            this.btnEli.UseVisualStyleBackColor = true;
+            this.btnEli.Visible = false;
+            // 
+            // btnActu
+            // 
+            this.btnActu.Image = global::Ventas.Properties.Resources.actu;
+            this.btnActu.Location = new System.Drawing.Point(337, 20);
+            this.btnActu.Name = "btnActu";
+            this.btnActu.Size = new System.Drawing.Size(64, 57);
+            this.btnActu.TabIndex = 20;
+            this.btnActu.UseVisualStyleBackColor = true;
+            this.btnActu.Visible = false;
             // 
             // FormBusquedafactura
             // 
@@ -406,5 +430,7 @@
         public System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btnGuardar;
+        public System.Windows.Forms.Button btnActu;
+        public System.Windows.Forms.Button btnEli;
     }
 }

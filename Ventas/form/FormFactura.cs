@@ -21,5 +21,10 @@ namespace Ventas.form
         {
 
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

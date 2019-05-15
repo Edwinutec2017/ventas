@@ -55,6 +55,18 @@
             this.btnCliente.Size = new System.Drawing.Size(63, 48);
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
             // 
+            // chekCredito
+            // 
+            this.chekCredito.Visible = true;
+            // 
+            // chekEfectivo
+            // 
+            this.chekEfectivo.Visible = true;
+            // 
+            // lblPago
+            // 
+            this.lblPago.Visible = true;
+            // 
             // txttipo
             // 
             this.txttipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

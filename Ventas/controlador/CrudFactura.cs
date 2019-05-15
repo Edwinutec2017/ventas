@@ -188,7 +188,7 @@ namespace Ventas.controlador
             con = new SqlConnection(conex.Cadena);
             sql = "execute detalleFactura " + precio + "," + cantidad + "," + descuento + "," + total + "," + idproduc + "," + idfac + "";
            
-            Console.WriteLine("consulta "+sql);
+            
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = System.Data.CommandType.Text;
             con.Open();
@@ -315,6 +315,35 @@ namespace Ventas.controlador
                 return false;
             }
             finally { con.Close(); }
+        }
+
+        /*para seleccionar la factura */
+        public void seleccionaPrtoducFact(int idf, DataGridView data)
+        {
+            
+            con = new SqlConnection(conex.Cadena);
+            try
+            {
+            
+    sql = "execute factBusid 2,"+idf+"";
+         
+                da = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                da.Fill(dt);
+                data.DataSource = dt;
+
+            }
+            catch (Exception e)
+            {
+
+                data = null;
+
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
     }
 }

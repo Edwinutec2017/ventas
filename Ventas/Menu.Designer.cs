@@ -242,6 +242,7 @@
             this.mantenimientoFacturaToolStripMenuItem.Name = "mantenimientoFacturaToolStripMenuItem";
             this.mantenimientoFacturaToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.mantenimientoFacturaToolStripMenuItem.Text = "Mantenimiento Factura";
+            this.mantenimientoFacturaToolStripMenuItem.Click += new System.EventHandler(this.mantenimientoFacturaToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 

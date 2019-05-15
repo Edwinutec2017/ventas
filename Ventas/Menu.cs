@@ -225,6 +225,17 @@ namespace Ventas
             fact.Show();
         }
 
+        private void mantenimientoFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BusquedaFact fact = new BusquedaFact();
+            fact.Id = this.id;
+            fact.Nombre = this.nombre;
+            fact.Rol = this.rol;
+            fact.Accion = 4;
+            fact.Show();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -73,9 +73,21 @@ namespace Ventas
                     fact.buscarFactura(1, "n", dataFact);
                 }
                 else {
-                    lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
-                    controlador.CrudFactura fact = new controlador.CrudFactura();
-                    fact.buscarFacturaDevolucion(1, "n", dataFact);
+                    if (this.accion.Equals(4) || this.accion.Equals(5))
+                    {
+                        btnEli.Visible = true;
+                        btnActu.Visible = true;
+                        btnEli.Enabled = false;
+                        btnActu.Enabled = false;
+                        lblTitulo.Text = "MANTENIMIENTO DE FACTURA";
+                        controlador.CrudFactura fact = new controlador.CrudFactura();
+                        fact.buscarFactura(1, "n", dataFact);
+                    }
+                    else {
+                        lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
+                        controlador.CrudFactura fact = new controlador.CrudFactura();
+                        fact.buscarFacturaDevolucion(1, "n", dataFact);
+                    }
                 }
             }
         }
@@ -106,10 +118,22 @@ namespace Ventas
                     }
                     else
                     {
-                        /*para la devolucion*/
-                        lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
-                        controlador.CrudFactura fact = new controlador.CrudFactura();
-                        fact.buscarFacturaDevolucion(2, textBox9.Text, dataFact);
+                        if (this.accion.Equals(4) || this.accion.Equals(5))
+                        {
+                            btnEli.Visible = true;
+                            btnActu.Visible = true;
+                            btnEli.Enabled = false;
+                            btnActu.Enabled = false;
+                            lblTitulo.Text = "MANTENIMIENTO DE FACTURA";
+                            controlador.CrudFactura fact = new controlador.CrudFactura();
+                            fact.buscarFactura(1, "n", dataFact);
+                        }
+                        else
+                        {
+                            lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
+                            controlador.CrudFactura fact = new controlador.CrudFactura();
+                            fact.buscarFacturaDevolucion(1, "n", dataFact);
+                        }
                     }
                   
                 }
@@ -134,17 +158,33 @@ namespace Ventas
                 }
                 else
                 {
-                    lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
-                    controlador.CrudFactura fact = new controlador.CrudFactura();
-                    fact.buscarFacturaDevolucion(1, "n", dataFact);
+                    if (this.accion.Equals(4) || this.accion.Equals(5))
+                    {
+                        lblTitulo.Text = "MANTENIMIENTO DE FACTURA";
+                        controlador.CrudFactura fact = new controlador.CrudFactura();
+                        fact.buscarFactura(1, "n", dataFact);
+                    }
+                    else
+                    {
+                        lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
+                        controlador.CrudFactura fact = new controlador.CrudFactura();
+                        fact.buscarFacturaDevolucion(1, "n", dataFact);
+                    }
                 }
             }
         }
 
         private void dataFact_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnImprimir.Visible = true;
-
+            
+            if (this.accion.Equals(4) || this.accion.Equals(5))
+            {
+                btnEli.Enabled = true;
+                btnActu.Enabled = true;
+            }
+            else {
+                btnImprimir.Visible = true;
+            }
             int i = dataFact.CurrentRow.Index;
             this.idFact = Convert.ToInt32(dataFact.Rows[i].Cells[0].Value.ToString());
            
@@ -198,6 +238,55 @@ namespace Ventas
                 MessageBox.Show(fact.Mensaje);
             }
 
+        }
+
+        private void btnEli_Click(object sender, EventArgs e)
+        {
+            if (this.accion.Equals(4)) {
+                try
+                {
+                    DialogResult dialogo = MessageBox.Show("Dece eliminar Toda La factura", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (dialogo == DialogResult.Yes)
+                    {
+                        modelo.CambioCliente fact = new modelo.CambioCliente();
+                        fact.Idfactura=this.idFact;
+                        fact.elimFact();
+                        if (fact.Msg.Equals("Factura eliminada")) {
+                            MessageBox.Show(fact.Msg);
+
+                         
+                            controlador.CrudFactura fac = new controlador.CrudFactura();
+                            fac.buscarFactura(1, "n", dataFact);
+                        }
+                        else {
+                            MessageBox.Show(fact.Msg);
+                        }
+
+
+                    }
+                    else
+                        return;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
+        private void btnActu_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ActuFactu actu = new ActuFactu();
+            actu.Id = this.id;
+            actu.Nombre = this.nombre;
+            actu.Rol = this.rol;
+            actu.Accion = this.accion;
+            actu.IdFact = this.idFact;
+            actu.Accion = 4;
+            actu.Show();
+           
         }
 
         public int Rol
