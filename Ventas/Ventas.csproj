@@ -33,8 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +84,12 @@
     <Compile Include="controlador\FacClienselect.cs" />
     <Compile Include="controlador\SelecProduc.cs" />
     <Compile Include="controlador\SelectClientFact.cs" />
+    <Compile Include="CrystalReportCliente.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportCliente.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Detalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +101,12 @@
     </Compile>
     <Compile Include="Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportCliente.Designer.cs">
+      <DependentUpon>FormReportCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Confirmar.cs">
       <SubType>Form</SubType>
@@ -124,6 +143,12 @@
     </Compile>
     <Compile Include="form\FormFactura.Designer.cs">
       <DependentUpon>FormFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
     <Compile Include="form\FormUsuarios.cs">
       <SubType>Form</SubType>
@@ -179,11 +204,18 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReportCliente.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCliente.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Detalle.resx">
       <DependentUpon>Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportCliente.resx">
+      <DependentUpon>FormReportCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Confirmar.resx">
       <DependentUpon>Confirmar.cs</DependentUpon>
@@ -202,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="form\FormFactura.resx">
       <DependentUpon>FormFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
@@ -254,6 +289,9 @@
     <None Include="img\otros\buscar.png" />
     <None Include="img\otros\flecha.png" />
     <Content Include="img\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

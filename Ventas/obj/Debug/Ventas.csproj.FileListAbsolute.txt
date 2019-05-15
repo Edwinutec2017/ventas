@@ -22,6 +22,7 @@ C:\Users\Edwin\Desktop\proyecto electiva4\ventasHeredado\Ventas\Ventas\obj\Debug
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasHeredado\Ventas\Ventas\obj\Debug\Ventas.form.Confirmar.resources
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasHeredado\Ventas\Ventas\obj\Debug\Ventas.BusquedaFact.resources
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasHeredado\Ventas\Ventas\obj\Debug\Ventas.form.FormBusquedafactura.resources
+<<<<<<< HEAD
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\Ventas.exe.config
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\Ventas.exe
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\Ventas.pdb
@@ -46,3 +47,50 @@ C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ve
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.csproj.GenerateResource.Cache
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.exe
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.pdb
+=======
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\Ventas.exe.config
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.exe
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.pdb
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\Ventas.exe
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\Ventas.pdb
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.BusquedaFact.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Catalogos.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Clientes.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Detalle.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Factura.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.Confirmar.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormBusquedafactura.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormCatalogos.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormCliente.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormDetalle.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormFactura.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormUsuarios.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Inicio.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.Login.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Menu.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Properties.Resources.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.Usuarios.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\FlashControlV71.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\bin\Debug\stdole.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.FormReportCliente.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormReport.resources
+>>>>>>> 9e3a1e4eda007da0b834378f5da645888c8f84d9

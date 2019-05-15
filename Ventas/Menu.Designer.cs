@@ -53,6 +53,7 @@
             this.mantenimientoFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblInicio = new System.Windows.Forms.Label();
+            this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -246,6 +247,8 @@
             // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -259,6 +262,13 @@
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(0, 33);
             this.lblInicio.TabIndex = 1;
+            // 
+            // reporteDeToolStripMenuItem
+            // 
+            this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.reporteDeToolStripMenuItem.Text = "Reporte de Clientes";
+            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -310,5 +320,6 @@
         private System.Windows.Forms.ToolStripMenuItem devolucionFacturaTotalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem devolucionXDetalleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarDevolucionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeToolStripMenuItem;
     }
 }

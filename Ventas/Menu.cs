@@ -225,6 +225,7 @@ namespace Ventas
             fact.Show();
         }
 
+<<<<<<< HEAD
         private void mantenimientoFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -234,6 +235,17 @@ namespace Ventas
             fact.Rol = this.rol;
             fact.Accion = 4;
             fact.Show();
+=======
+        private void reporteDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormReportCliente reportClient = new FormReportCliente();
+           reportClient.Id = this.id;
+           reportClient.Rol = this.rol;
+           reportClient.Nombre = this.nombre;
+            reportClient.Show();
+
+>>>>>>> 9e3a1e4eda007da0b834378f5da645888c8f84d9
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
