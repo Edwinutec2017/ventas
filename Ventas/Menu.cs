@@ -238,12 +238,12 @@ namespace Ventas
         }
         private void reporteDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            /*this.Hide();
             FormReportCliente reportClient = new FormReportCliente();
            reportClient.Id = this.id;
            reportClient.Rol = this.rol;
            reportClient.Nombre = this.nombre;
-            reportClient.Show();
+            reportClient.Show();*/
 
 
         }

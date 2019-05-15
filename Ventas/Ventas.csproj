@@ -84,12 +84,6 @@
     <Compile Include="controlador\FacClienselect.cs" />
     <Compile Include="controlador\SelecProduc.cs" />
     <Compile Include="controlador\SelectClientFact.cs" />
-    <Compile Include="CrystalReportCliente.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportCliente.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Detalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +95,6 @@
     </Compile>
     <Compile Include="Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormReportCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReportCliente.Designer.cs">
-      <DependentUpon>FormReportCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="form\Confirmar.cs">
       <SubType>Form</SubType>
@@ -204,18 +192,11 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReportCliente.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportCliente.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Detalle.resx">
       <DependentUpon>Detalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReportCliente.resx">
-      <DependentUpon>FormReportCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\Confirmar.resx">
       <DependentUpon>Confirmar.cs</DependentUpon>
