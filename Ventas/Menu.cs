@@ -236,14 +236,20 @@ namespace Ventas
         }
         private void reporteDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*this.Hide();
-            FormReportCliente reportClient = new FormReportCliente();
-           reportClient.Id = this.id;
-           reportClient.Rol = this.rol;
-           reportClient.Nombre = this.nombre;
-            reportClient.Show();*/
+       
 
 
+        }
+
+        private void devolucionXDetalleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BusquedaFact fact = new BusquedaFact();
+            fact.Id = this.id;
+            fact.Nombre = this.nombre;
+            fact.Rol = this.rol;
+            fact.Accion = 6;
+            fact.Show();
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

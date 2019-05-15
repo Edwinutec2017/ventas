@@ -143,6 +143,16 @@ namespace Ventas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap devolver {
+            get {
+                object obj = ResourceManager.GetObject("devolver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eli {
             get {
                 object obj = ResourceManager.GetObject("eli", resourceCulture);

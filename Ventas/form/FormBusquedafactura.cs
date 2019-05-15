@@ -21,5 +21,10 @@ namespace Ventas.form
         {
 
         }
+
+        private void FormBusquedafactura_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

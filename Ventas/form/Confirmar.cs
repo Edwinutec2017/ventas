@@ -10,15 +10,13 @@ using System.Windows.Forms;
 
 namespace Ventas.form
 {
-
-
     public partial class Confirmar : Form
     {
 
         private int id, rol;
         private String nombre;
         /*para factura*/
-        private int idCliente;
+        private int idCliente,producId,accion;
         private String nombreCliente = "";
         private String documento;
         private String Direccion;
@@ -301,6 +299,32 @@ namespace Ventas.form
             }
         }
 
+        public int ProducId
+        {
+            get
+            {
+                return producId;
+            }
+
+            set
+            {
+                producId = value;
+            }
+        }
+
+        public int Accion
+        {
+            get
+            {
+                return accion;
+            }
+
+            set
+            {
+                accion = value;
+            }
+        }
+
         public Confirmar()
         {
             InitializeComponent();
@@ -308,33 +332,42 @@ namespace Ventas.form
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Factura fac = new Factura();
+            if (this.accion.Equals(6)) {
+                MessageBox.Show("id seleccionado "+this.producId);
+                /*para aser la eliminacion del producto*/
+                //regresar a actu fac
+                /*execute elimFac 2,id de la fact */
 
-            fac.Id = this.id;
-            fac.Rol = this.Rol;
-            fac.Nombre = this.nombre;
-            fac.IdCliente = this.idCliente;
-            fac.NombreCliente = this.nombreCliente;
-            fac.Documento = this.documento;
-            fac.Direccion1 = this.Direccion;
-            fac.Telefono1 = this.Telefono;
-            fac.Tipo = this.tipo;
-            /*el detalle*/
-            fac.NumeroFact = this.numeroFact;
-            /*---*/
-            fac.SubTotal = this.subTotal;
-            fac.Iva1 = this.Iva;
-            fac.Total1 = this.Total;
-            /*----------------*/
-            fac.Idproducto = this.idproducto;
-            fac.Codigo1 = this.Codigo;
-            fac.NombreProducto = this.nombreProducto;
-            fac.Cantidad = this.cantidad;
-            fac.Descuento = this.descuento;
-            fac.Totalproducto = this.totalproducto;
-            fac.PrecioVenta = this.precioVenta;
-            fac.Show();
+            }
+            else {
+                this.Hide();
+                Factura fac = new Factura();
+
+                fac.Id = this.id;
+                fac.Rol = this.Rol;
+                fac.Nombre = this.nombre;
+                fac.IdCliente = this.idCliente;
+                fac.NombreCliente = this.nombreCliente;
+                fac.Documento = this.documento;
+                fac.Direccion1 = this.Direccion;
+                fac.Telefono1 = this.Telefono;
+                fac.Tipo = this.tipo;
+                /*el detalle*/
+                fac.NumeroFact = this.numeroFact;
+                /*---*/
+                fac.SubTotal = this.subTotal;
+                fac.Iva1 = this.Iva;
+                fac.Total1 = this.Total;
+                /*----------------*/
+                fac.Idproducto = this.idproducto;
+                fac.Codigo1 = this.Codigo;
+                fac.NombreProducto = this.nombreProducto;
+                fac.Cantidad = this.cantidad;
+                fac.Descuento = this.descuento;
+                fac.Totalproducto = this.totalproducto;
+                fac.PrecioVenta = this.precioVenta;
+                fac.Show();
+            }
         }
 
         private void Confirmar_Load(object sender, EventArgs e)

@@ -104,18 +104,23 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(686, 20);
+            this.btnGuardar.Location = new System.Drawing.Point(700, 20);
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActu
             // 
-            this.btnActu.Location = new System.Drawing.Point(510, 20);
+            this.btnActu.Location = new System.Drawing.Point(557, 20);
             this.btnActu.Click += new System.EventHandler(this.btnActu_Click);
             // 
             // btnEli
             // 
-            this.btnEli.Location = new System.Drawing.Point(592, 20);
+            this.btnEli.Location = new System.Drawing.Point(627, 20);
             this.btnEli.Click += new System.EventHandler(this.btnEli_Click);
+            // 
+            // btnDevDetalle
+            // 
+            this.btnDevDetalle.Location = new System.Drawing.Point(487, 22);
+            this.btnDevDetalle.Click += new System.EventHandler(this.btnDevDetalle_Click);
             // 
             // dataFact
             // 

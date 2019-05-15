@@ -84,9 +84,19 @@ namespace Ventas
                         fact.buscarFactura(1, "n", dataFact);
                     }
                     else {
-                        lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
-                        controlador.CrudFactura fact = new controlador.CrudFactura();
-                        fact.buscarFacturaDevolucion(1, "n", dataFact);
+                        if (this.accion.Equals(6))
+                        {
+                            btnDevDetalle.Enabled = false;
+                            btnDevDetalle.Visible = true;
+                            lblTitulo.Text = "DEVOLUCION X DETALLE ";
+                            controlador.CrudFactura fact = new controlador.CrudFactura();
+                            fact.buscarFactura(1, "n", dataFact);
+                        }
+                        else {
+                            lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
+                            controlador.CrudFactura fact = new controlador.CrudFactura();
+                            fact.buscarFacturaDevolucion(1, "n", dataFact);
+                        }
                     }
                 }
             }
@@ -106,33 +116,35 @@ namespace Ventas
             else {
                 if (this.accion.Equals(1))
                 {
-                  
+                    /*BUSQUEDAS DE PRODUCTOS */
+                    controlador.CrudFactura fact = new controlador.CrudFactura();
+                    fact.buscarFactura(2, textBox9.Text, dataFact);
                 }
                 else
                 {
                     if (this.accion.Equals(3))
                     {
-                        lblTitulo.Text = "BUSQUEDA DE FACTURA";
+                       
                         controlador.CrudFactura fact = new controlador.CrudFactura();
                         fact.buscarFactura(2, textBox9.Text, dataFact);
                     }
                     else
                     {
-                        if (this.accion.Equals(4) || this.accion.Equals(5))
+                        if (this.accion.Equals(4) || this.accion.Equals(5) || this.accion.Equals(6))
                         {
                             btnEli.Visible = true;
                             btnActu.Visible = true;
                             btnEli.Enabled = false;
                             btnActu.Enabled = false;
-                            lblTitulo.Text = "MANTENIMIENTO DE FACTURA";
+                            
                             controlador.CrudFactura fact = new controlador.CrudFactura();
-                            fact.buscarFactura(1, "n", dataFact);
+                            fact.buscarFactura(2, textBox9.Text, dataFact);
                         }
                         else
                         {
-                            lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
+                          /*BUSQUEDA DE DEVOLUCIONES */
                             controlador.CrudFactura fact = new controlador.CrudFactura();
-                            fact.buscarFacturaDevolucion(1, "n", dataFact);
+                            fact.buscarFacturaDevolucion(2, textBox9.Text, dataFact);
                         }
                     }
                   
@@ -166,9 +178,20 @@ namespace Ventas
                     }
                     else
                     {
-                        lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
-                        controlador.CrudFactura fact = new controlador.CrudFactura();
-                        fact.buscarFacturaDevolucion(1, "n", dataFact);
+                        if (this.accion.Equals(6))
+                        {
+                            btnDevDetalle.Enabled = false;
+                            btnDevDetalle.Visible = true;
+                            lblTitulo.Text = "DEVOLUCION X DETALLE ";
+                            controlador.CrudFactura fact = new controlador.CrudFactura();
+                            fact.buscarFactura(1, "n", dataFact);
+                        }
+                        else
+                        {
+                            lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
+                            controlador.CrudFactura fact = new controlador.CrudFactura();
+                            fact.buscarFacturaDevolucion(1, "n", dataFact);
+                        }
                     }
                 }
             }
@@ -183,7 +206,13 @@ namespace Ventas
                 btnActu.Enabled = true;
             }
             else {
-                btnImprimir.Visible = true;
+                if (this.accion.Equals(6)) {
+                    btnImprimir.Visible = false;
+                    btnDevDetalle.Enabled = true;
+                } else {
+                    btnImprimir.Visible = true;
+                }
+
             }
             int i = dataFact.CurrentRow.Index;
             this.idFact = Convert.ToInt32(dataFact.Rows[i].Cells[0].Value.ToString());
@@ -287,6 +316,18 @@ namespace Ventas
             actu.Accion = 4;
             actu.Show();
            
+        }
+
+        private void btnDevDetalle_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ActuFactu ac = new ActuFactu();
+            ac.Id = this.id;
+            ac.Nombre = this.nombre;
+            ac.Rol = this.rol;
+            ac.IdFact = this.idFact;
+            ac.Accion = this.accion;
+            ac.Show();
         }
 
         public int Rol

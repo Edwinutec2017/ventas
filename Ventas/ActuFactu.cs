@@ -54,7 +54,6 @@ namespace Ventas
             busqueda.Rol = this.rol;
             busqueda.Accion = this.accion;
             busqueda.IdFact = this.idFact;
-            
             busqueda.Show();
         }
 
@@ -104,6 +103,38 @@ namespace Ventas
 
             }
             else {
+                btnProducto.Visible = false;
+                btnCliente.Visible = false;
+                lblTitulo.Text = "DEVOLUCION X DETALLE";
+
+                //ppfact
+                controlador.CrudFactura fac = new controlador.CrudFactura();
+
+                fac.seleccionaPrtoducFact(this.idFact, dataProd);
+
+                /*para traer el encabezado */
+                modelo.CambioCliente cambio = new modelo.CambioCliente();
+                cambio.seleEnfac(this.idFact);
+                if (cambio.Msg.Equals("true"))
+                {
+                    txtFactura.Text = cambio.Factura;
+                    txtVendedor.Text = cambio.Vendedor;
+                    txtFecha.Text = cambio.Fecha;
+                    txCodCliente.Text = cambio.CodCliente1.ToString();
+                    txtNonbreCliente.Text = cambio.Cliente;
+                    txtDocumento.Text = cambio.Dui;
+                    txtDireccion.Text = cambio.Direccion;
+                    txtTelefono.Text = cambio.Telefono;
+                    txttipo.Text = cambio.NombreTipo;
+                    txtSub.Text = cambio.Sub1.ToString();
+                    txtIva.Text = cambio.Iva.ToString();
+                    txtTotal.Text = cambio.Total.ToString();
+                }
+                else
+                {
+                    MessageBox.Show(cambio.Msg);
+                }
+
 
             }
         }
@@ -154,6 +185,39 @@ namespace Ventas
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.accion.Equals(6)) {
+                try
+                {
+                    DialogResult dialogo = MessageBox.Show("Decea Quitar el producto de la Factura", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                    if (dialogo == DialogResult.Yes)
+                    {
+                        int i = dataProd.CurrentRow.Index;
+                    
+                        
+                        this.Hide();
+                        form.Confirmar actu = new form.Confirmar();
+                        actu.Id = this.id;
+                        actu.Nombre = this.nombre;
+                        actu.Rol = this.rol;
+                        /*producto*/
+                        actu.Accion = this.accion;
+                        actu.ProducId = Convert.ToInt32(dataProd.Rows[i].Cells[0].Value.ToString());
+                        actu.Show();
+
+                    }
+                    else
+                        return;
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
         }
 
         public string Nombre

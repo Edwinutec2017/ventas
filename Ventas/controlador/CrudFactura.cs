@@ -263,7 +263,7 @@ namespace Ventas.controlador
                        
                         break;
                     case 2:
-                        sql = "execute factSelectDevolu 1,'"+factu+"'";
+                        sql = "execute factSelectDevolu 2,'"+factu+"'";
                         break;
                 }
                 da = new SqlDataAdapter(sql, con);

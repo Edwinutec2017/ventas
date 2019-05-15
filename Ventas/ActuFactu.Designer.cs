@@ -135,6 +135,8 @@
             this.dataProd.Name = "dataProd";
             this.dataProd.Size = new System.Drawing.Size(793, 150);
             this.dataProd.TabIndex = 0;
+            this.dataProd.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProd_CellContentClick);
+            this.dataProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProd_CellContentClick);
             // 
             // lblTitulo
             // 

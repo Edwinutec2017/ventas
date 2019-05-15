@@ -46,6 +46,9 @@
             this.txtFact = new System.Windows.Forms.TextBox();
             this.lblFact = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnDevDetalle = new System.Windows.Forms.Button();
+            this.btnActu = new System.Windows.Forms.Button();
+            this.btnEli = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -55,8 +58,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnHome = new System.Windows.Forms.Button();
-            this.btnEli = new System.Windows.Forms.Button();
-            this.btnActu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -251,6 +252,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDevDetalle);
             this.groupBox2.Controls.Add(this.btnActu);
             this.groupBox2.Controls.Add(this.btnEli);
             this.groupBox2.Controls.Add(this.btnGuardar);
@@ -268,12 +270,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acccion";
             // 
+            // btnDevDetalle
+            // 
+            this.btnDevDetalle.Image = global::Ventas.Properties.Resources.devolver;
+            this.btnDevDetalle.Location = new System.Drawing.Point(317, 20);
+            this.btnDevDetalle.Name = "btnDevDetalle";
+            this.btnDevDetalle.Size = new System.Drawing.Size(64, 57);
+            this.btnDevDetalle.TabIndex = 21;
+            this.btnDevDetalle.UseVisualStyleBackColor = true;
+            this.btnDevDetalle.Visible = false;
+            // 
+            // btnActu
+            // 
+            this.btnActu.Image = global::Ventas.Properties.Resources.actu;
+            this.btnActu.Location = new System.Drawing.Point(391, 20);
+            this.btnActu.Name = "btnActu";
+            this.btnActu.Size = new System.Drawing.Size(64, 57);
+            this.btnActu.TabIndex = 20;
+            this.btnActu.UseVisualStyleBackColor = true;
+            this.btnActu.Visible = false;
+            // 
+            // btnEli
+            // 
+            this.btnEli.Image = global::Ventas.Properties.Resources.eli;
+            this.btnEli.Location = new System.Drawing.Point(470, 20);
+            this.btnEli.Name = "btnEli";
+            this.btnEli.Size = new System.Drawing.Size(64, 57);
+            this.btnEli.TabIndex = 19;
+            this.btnEli.UseVisualStyleBackColor = true;
+            this.btnEli.Visible = false;
+            // 
             // btnGuardar
             // 
             this.btnGuardar.Image = global::Ventas.Properties.Resources.guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(499, 20);
+            this.btnGuardar.Location = new System.Drawing.Point(551, 18);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(64, 57);
+            this.btnGuardar.Size = new System.Drawing.Size(74, 59);
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Visible = false;
@@ -299,7 +331,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Image = global::Ventas.Properties.Resources.impresora;
-            this.btnImprimir.Location = new System.Drawing.Point(663, 20);
+            this.btnImprimir.Location = new System.Drawing.Point(701, 18);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(64, 59);
             this.btnImprimir.TabIndex = 6;
@@ -309,7 +341,7 @@
             // btnTodos
             // 
             this.btnTodos.Image = global::Ventas.Properties.Resources.db;
-            this.btnTodos.Location = new System.Drawing.Point(583, 22);
+            this.btnTodos.Location = new System.Drawing.Point(631, 18);
             this.btnTodos.Name = "btnTodos";
             this.btnTodos.Size = new System.Drawing.Size(64, 57);
             this.btnTodos.TabIndex = 5;
@@ -356,26 +388,6 @@
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnHome.UseVisualStyleBackColor = true;
             // 
-            // btnEli
-            // 
-            this.btnEli.Image = global::Ventas.Properties.Resources.eli;
-            this.btnEli.Location = new System.Drawing.Point(416, 20);
-            this.btnEli.Name = "btnEli";
-            this.btnEli.Size = new System.Drawing.Size(64, 57);
-            this.btnEli.TabIndex = 19;
-            this.btnEli.UseVisualStyleBackColor = true;
-            this.btnEli.Visible = false;
-            // 
-            // btnActu
-            // 
-            this.btnActu.Image = global::Ventas.Properties.Resources.actu;
-            this.btnActu.Location = new System.Drawing.Point(337, 20);
-            this.btnActu.Name = "btnActu";
-            this.btnActu.Size = new System.Drawing.Size(64, 57);
-            this.btnActu.TabIndex = 20;
-            this.btnActu.UseVisualStyleBackColor = true;
-            this.btnActu.Visible = false;
-            // 
             // FormBusquedafactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +405,7 @@
             this.Name = "FormBusquedafactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Busqueda ";
+            this.Load += new System.EventHandler(this.FormBusquedafactura_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -432,5 +445,6 @@
         public System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.Button btnActu;
         public System.Windows.Forms.Button btnEli;
+        public System.Windows.Forms.Button btnDevDetalle;
     }
 }

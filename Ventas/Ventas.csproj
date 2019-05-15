@@ -260,6 +260,7 @@
     <Content Include="img\otros\cliente.png" />
     <Content Include="img\otros\db.png" />
     <Content Include="img\otros\desconectar.png" />
+    <Content Include="img\otros\devolver.png" />
     <Content Include="img\otros\eli.png" />
     <Content Include="img\otros\ence.png" />
     <Content Include="img\otros\guardar.png" />
