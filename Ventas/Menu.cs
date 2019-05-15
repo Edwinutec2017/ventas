@@ -224,8 +224,6 @@ namespace Ventas
             fact.Accion = 3;
             fact.Show();
         }
-
-
         private void mantenimientoFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -52,8 +52,8 @@
             this.buscarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientoFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblInicio = new System.Windows.Forms.Label();
             this.reporteDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblInicio = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -253,6 +253,13 @@
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(74, 21);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // reporteDeToolStripMenuItem
+            // 
+            this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
+            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reporteDeToolStripMenuItem.Text = "Clientes";
+            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
+            // 
             // lblInicio
             // 
             this.lblInicio.AutoSize = true;
@@ -262,13 +269,6 @@
             this.lblInicio.Name = "lblInicio";
             this.lblInicio.Size = new System.Drawing.Size(0, 33);
             this.lblInicio.TabIndex = 1;
-            // 
-            // reporteDeToolStripMenuItem
-            // 
-            this.reporteDeToolStripMenuItem.Name = "reporteDeToolStripMenuItem";
-            this.reporteDeToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.reporteDeToolStripMenuItem.Text = "Reporte de Clientes";
-            this.reporteDeToolStripMenuItem.Click += new System.EventHandler(this.reporteDeToolStripMenuItem_Click);
             // 
             // Menu
             // 
