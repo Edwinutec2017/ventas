@@ -18,11 +18,11 @@ namespace Ventas.controlador
         private SqlDataReader leer;
         private SqlCommand cmd;
         private String sql = "";
-        private Boolean msg;
+      //  private Boolean msg;
         private List<String> data = new List<String>();
         private DataTable dt;
         private SqlDataAdapter da;
-        public bool Msg;
+       // public bool Msg;
 
         private int fac;
         private int idfac;
@@ -240,7 +240,7 @@ namespace Ventas.controlador
             }
             catch (Exception e)
             {
-              
+                Console.WriteLine(e);
                 data = null;
 
             }
@@ -274,7 +274,7 @@ namespace Ventas.controlador
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e);
                 data = null;
 
             }
@@ -335,7 +335,7 @@ namespace Ventas.controlador
             }
             catch (Exception e)
             {
-
+                Console.WriteLine(e);
                 data = null;
 
             }
