@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace Ventas.form
 {
-    public partial class FormReport : Form
+    public partial class FormRepor : Form
     {
-        public FormReport()
+        public FormRepor()
         {
             InitializeComponent();
         }
 
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormReport_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
 
         }

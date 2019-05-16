@@ -67,7 +67,7 @@ namespace Ventas
             }
             else {
                 if (this.accion.Equals(3)) {
-                    
+                    btnGuardar.Visible = false;
                     lblTitulo.Text = "DEVOLUCION DE FACTURA TOTAL";
                     controlador.CrudFactura fact = new controlador.CrudFactura();
                     fact.buscarFactura(1, "n", dataFact);
@@ -226,7 +226,7 @@ namespace Ventas
             txtIva.Text="$ "+ dataFact.Rows[i].Cells[7].Value.ToString();
             txtTotal.Text= "$ "+ dataFact.Rows[i].Cells[8].Value.ToString();
             if (this.accion.Equals(3)) {
-                btnGuardar.Visible = true;
+                btnGuardar.Visible = false;
             }
 
         }

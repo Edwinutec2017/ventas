@@ -116,3 +116,6 @@ C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\Cr
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\bin\Debug\stdole.dll
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.ActuFactu.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.form.FormRepor.resources
+C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.ReportVentas.resources

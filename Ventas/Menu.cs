@@ -213,7 +213,7 @@ namespace Ventas
             fact.Accion = 2;
             fact.Show();
         }
-
+        
         private void devolucionFacturaTotalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -250,6 +250,17 @@ namespace Ventas
             fact.Rol = this.rol;
             fact.Accion = 6;
             fact.Show();
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportVentas reporteVenta = new ReportVentas();
+            reporteVenta.Id = this.id;
+            reporteVenta.Nombre = this.nombre;
+            reporteVenta.Rol = this.rol;
+            reporteVenta.Show();
+           
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
