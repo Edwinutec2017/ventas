@@ -263,6 +263,41 @@ namespace Ventas
            
         }
 
+        private void devolucionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportDevolucion devolucion = new ReportDevolucion();
+            devolucion.Id = this.id;
+            devolucion.Nombre = this.nombre;
+            devolucion.Rol = this.rol;
+            devolucion.Show();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void partesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportProductosPartes repart = new ReportProductosPartes();
+            repart.Id = this.id;
+            repart.Nombre = this.nombre;
+            repart.Rol = this.rol;
+            repart.Show();
+        }
+
+        private void accesoriosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ReportProductosAccesorios repart = new ReportProductosAccesorios();
+            repart.Id = this.id;
+            repart.Nombre = this.nombre;
+            repart.Rol = this.rol;
+            repart.Show();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

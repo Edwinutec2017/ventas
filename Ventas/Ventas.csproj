@@ -90,6 +90,12 @@
     <Compile Include="Detalle.Designer.cs">
       <DependentUpon>Detalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DevReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Factura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,10 +180,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ReportAccesorios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportAccesorios.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportDevolucion.Designer.cs">
+      <DependentUpon>ReportDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReporteVentas.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportProductosAccesorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportProductosAccesorios.Designer.cs">
+      <DependentUpon>ReportProductosAccesorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportProductosPartes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportProductosPartes.Designer.cs">
+      <DependentUpon>ReportProductosPartes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportProductParte.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportProductParte.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportVentas.cs">
@@ -206,6 +242,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Detalle.resx">
       <DependentUpon>Detalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DevReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
@@ -248,9 +288,26 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportAccesorios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportAccesorios.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDevolucion.resx">
+      <DependentUpon>ReportDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteVentas.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteVentas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProductosAccesorios.resx">
+      <DependentUpon>ReportProductosAccesorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProductosPartes.resx">
+      <DependentUpon>ReportProductosPartes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportProductParte.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportProductParte.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportVentas.resx">
       <DependentUpon>ReportVentas.cs</DependentUpon>
