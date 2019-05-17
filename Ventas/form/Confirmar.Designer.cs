@@ -42,13 +42,14 @@
             this.label1.Size = new System.Drawing.Size(324, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Presiones el Boton para Actualizar La Factura";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
             this.button1.Image = global::Ventas.Properties.Resources.actu;
-            this.button1.Location = new System.Drawing.Point(111, 37);
+            this.button1.Location = new System.Drawing.Point(81, 39);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 50);
+            this.button1.Size = new System.Drawing.Size(155, 50);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -59,7 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(336, 99);
+            this.ClientSize = new System.Drawing.Size(339, 104);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);

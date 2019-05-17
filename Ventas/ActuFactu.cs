@@ -47,14 +47,27 @@ namespace Ventas
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            BusquedaFact busqueda = new BusquedaFact();
-            busqueda.Id = this.id;
-            busqueda.Nombre = this.nombre;
-            busqueda.Rol = this.rol;
-            busqueda.Accion = this.accion;
-            busqueda.IdFact = this.idFact;
-            busqueda.Show();
+            if (this.accion.Equals(6)) {
+                this.Hide();
+                BusquedaFact busqueda = new BusquedaFact();
+                busqueda.Id = this.id;
+                busqueda.Nombre = this.nombre;
+                busqueda.Rol = this.rol;
+                busqueda.Accion = this.accion;
+                busqueda.Show();
+            }
+            else
+            {
+                this.Hide();
+                BusquedaFact busqueda = new BusquedaFact();
+                busqueda.Id = this.id;
+                busqueda.Nombre = this.nombre;
+                busqueda.Rol = this.rol;
+                busqueda.Accion = this.accion;
+                busqueda.IdFact = this.idFact;
+                busqueda.Show();
+
+            }
         }
 
         private void groupEncabezado_Enter(object sender, EventArgs e)
@@ -196,8 +209,6 @@ namespace Ventas
                     if (dialogo == DialogResult.Yes)
                     {
                         int i = dataProd.CurrentRow.Index;
-                    
-                        
                         this.Hide();
                         form.Confirmar actu = new form.Confirmar();
                         actu.Id = this.id;
@@ -206,6 +217,9 @@ namespace Ventas
                         /*producto*/
                         actu.Accion = this.accion;
                         actu.ProducId = Convert.ToInt32(dataProd.Rows[i].Cells[0].Value.ToString());
+                        actu.SubTotal = Convert.ToDouble(txtSub.Text);
+                        actu.TotalProd = Convert.ToDouble(dataProd.Rows[i].Cells[6].Value.ToString());
+                        actu.IdFact1 = this.idFact;
                         actu.Show();
 
                     }

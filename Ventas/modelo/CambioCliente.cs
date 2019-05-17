@@ -331,5 +331,25 @@ namespace Ventas.modelo
 
         }
 
+        /*para aser la devolucion de un producto y actualizar el total */
+        public void devProduct() {
+            controlador.FacClienselect devp = new controlador.FacClienselect();
+            if (devp.elimFactProd(this.idproducto).Equals(true)) {
+                if (devp.cambioTotalFact(this.Sub,this.iva,this.total,this.idfactura)) {
+                    this.msg = "Producto eliminado";
+                } else {
+                    this.msg = "No se pudo actualizar el total";
+                }
+
+            } else {
+                this.msg = "No se pudo eliminar el producto";
+
+            }
+
+
+
+        }
+
+
     }
 }

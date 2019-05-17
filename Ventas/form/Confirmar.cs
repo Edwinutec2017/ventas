@@ -16,7 +16,7 @@ namespace Ventas.form
         private int id, rol;
         private String nombre;
         /*para factura*/
-        private int idCliente,producId,accion;
+        private int idCliente,producId,accion, IdFact;
         private String nombreCliente = "";
         private String documento;
         private String Direccion;
@@ -26,7 +26,7 @@ namespace Ventas.form
         /*para el numero de factura*/
         private String numeroFact;
         /*para el producto*/
-        private Double subTotal = 0.0;
+        private Double subTotal = 0.0,totalProd;
         private Double Iva = 0.0;
         private Double Total = 0.0;
 
@@ -325,6 +325,37 @@ namespace Ventas.form
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public double TotalProd
+        {
+            get
+            {
+                return totalProd;
+            }
+
+            set
+            {
+                totalProd = value;
+            }
+        }
+
+        public int IdFact1
+        {
+            get
+            {
+                return IdFact;
+            }
+
+            set
+            {
+                IdFact = value;
+            }
+        }
+
         public Confirmar()
         {
             InitializeComponent();
@@ -333,11 +364,40 @@ namespace Ventas.form
         private void button1_Click(object sender, EventArgs e)
         {
             if (this.accion.Equals(6)) {
-                MessageBox.Show("id seleccionado "+this.producId);
-                /*para aser la eliminacion del producto*/
-                //regresar a actu fac
-                /*execute elimFac 2,id de la fact */
-
+                /*eliman el produc y actualiza la factu*/
+                this.subTotal = this.subTotal - this.totalProd;
+                this.Iva = this.subTotal * 0.13;
+                this.Total = this.subTotal + this.Iva;
+                /*llama del metodo*/
+                modelo.CambioCliente devp = new modelo.CambioCliente();
+                devp.Idfactura = this.IdFact;
+                devp.Idproducto = this.producId;
+                devp.Sub1 = this.subTotal;
+                devp.Iva = this.Iva;
+                devp.Total = this.Total;
+                devp.devProduct();
+                if (devp.Msg.Equals("Producto eliminado")) {
+                    MessageBox.Show(devp.Msg);
+                     this.Hide();
+               ActuFactu dev = new ActuFactu();
+               dev.Id = this.id;
+               dev.Nombre = this.nombre;
+               dev.Rol = this.rol;
+               dev.IdFact = this.IdFact;
+               dev.Accion = this.accion;
+               dev.Show();
+                }
+                else {
+                    MessageBox.Show(devp.Msg);
+                     this.Hide();
+               ActuFactu dev = new ActuFactu();
+               dev.Id = this.id;
+               dev.Nombre = this.nombre;
+               dev.Rol = this.rol;
+               dev.IdFact = this.IdFact;
+               dev.Accion = this.accion;
+               dev.Show();
+                }
             }
             else {
                 this.Hide();

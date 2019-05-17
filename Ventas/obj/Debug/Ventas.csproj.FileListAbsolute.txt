@@ -122,3 +122,9 @@ C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.ReportVentas.res
 C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.ReportDevolucion.resources
 C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.ReportProductosPartes.resources
 C:\Users\Admin\Desktop\electiva4\ventas\Ventas\obj\Debug\Ventas.ReportProductosAccesorios.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.form.FormRepor.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.ReportDevolucion.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.ReportProductosAccesorios.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.ReportProductosPartes.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.ReportVentas.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.form.FormProduct.resources

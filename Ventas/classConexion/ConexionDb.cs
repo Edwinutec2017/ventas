@@ -12,7 +12,7 @@ namespace Ventas.classConexion
 
         //solo modifique los parametros necesarios 
         private String namedb = "ModuloVentas";//nombre de la db 
-        private String usersql = "DESKTOP\\INSTANCIA";//asi deve de ir el nombre del usuario
+        private String usersql = "equipo0\\SQLExpress";//asi deve de ir el nombre del usuario
         private String cadena = "";
         public SqlConnection conecdb = new SqlConnection();
 
