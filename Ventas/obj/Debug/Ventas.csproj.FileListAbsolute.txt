@@ -128,3 +128,5 @@ C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ve
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.ReportProductosPartes.resources
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.ReportVentas.resources
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.form.FormProduct.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.form.FormProveedor.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.Proveedor.resources

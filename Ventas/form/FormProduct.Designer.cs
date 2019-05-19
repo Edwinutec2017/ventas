@@ -29,37 +29,41 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblModelo = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lblSerie = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.lblId = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.lblDescrip = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.lblMax = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.lblMin = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.lblPrecioC = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.lblPrecioV = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.checkPartes = new System.Windows.Forms.CheckBox();
-            this.checAccseorios = new System.Windows.Forms.CheckBox();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.checAccseorios = new System.Windows.Forms.CheckBox();
+            this.checkPartes = new System.Windows.Forms.CheckBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblPrecioV = new System.Windows.Forms.Label();
+            this.txtPrecioVenta = new System.Windows.Forms.TextBox();
+            this.lblPrecioC = new System.Windows.Forms.Label();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.txtMinima = new System.Windows.Forms.TextBox();
+            this.lblMax = new System.Windows.Forms.Label();
+            this.txtMaxima = new System.Windows.Forms.TextBox();
+            this.lblDescrip = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblSerie = new System.Windows.Forms.Label();
+            this.txtSerie = new System.Windows.Forms.TextBox();
+            this.lblModelo = new System.Windows.Forms.Label();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.lblProveedor = new System.Windows.Forms.Label();
+            this.txtproveedor = new System.Windows.Forms.TextBox();
+            this.btnProve = new System.Windows.Forms.Button();
             this.btnTodos = new System.Windows.Forms.Button();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -67,40 +71,41 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblProveedor);
+            this.groupBox1.Controls.Add(this.txtproveedor);
             this.groupBox1.Controls.Add(this.lblCantidad);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.checAccseorios);
             this.groupBox1.Controls.Add(this.checkPartes);
             this.groupBox1.Controls.Add(this.lblCategoria);
             this.groupBox1.Controls.Add(this.lblPrecioV);
-            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.txtPrecioVenta);
             this.groupBox1.Controls.Add(this.lblPrecioC);
-            this.groupBox1.Controls.Add(this.textBox10);
+            this.groupBox1.Controls.Add(this.txtPrecioCompra);
             this.groupBox1.Controls.Add(this.lblMin);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.txtMinima);
             this.groupBox1.Controls.Add(this.lblMax);
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtMaxima);
             this.groupBox1.Controls.Add(this.lblDescrip);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.lblId);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtId);
             this.groupBox1.Controls.Add(this.lblSerie);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtSerie);
             this.groupBox1.Controls.Add(this.lblModelo);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtModelo);
             this.groupBox1.Controls.Add(this.lblMarca);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtMarca);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.lblCodigo);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox1.Location = new System.Drawing.Point(22, 55);
@@ -110,8 +115,258 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalle";
             // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCantidad.Location = new System.Drawing.Point(295, 138);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(64, 15);
+            this.lblCantidad.TabIndex = 29;
+            this.lblCantidad.Text = "Cantidad";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(286, 154);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(126, 21);
+            this.txtCantidad.TabIndex = 30;
+            // 
+            // checAccseorios
+            // 
+            this.checAccseorios.AutoSize = true;
+            this.checAccseorios.Location = new System.Drawing.Point(769, 133);
+            this.checAccseorios.Name = "checAccseorios";
+            this.checAccseorios.Size = new System.Drawing.Size(85, 19);
+            this.checAccseorios.TabIndex = 28;
+            this.checAccseorios.Text = "Accesorios";
+            this.checAccseorios.UseVisualStyleBackColor = true;
+            // 
+            // checkPartes
+            // 
+            this.checkPartes.AutoSize = true;
+            this.checkPartes.Location = new System.Drawing.Point(769, 110);
+            this.checkPartes.Name = "checkPartes";
+            this.checkPartes.Size = new System.Drawing.Size(61, 19);
+            this.checkPartes.TabIndex = 27;
+            this.checkPartes.Text = "Partes";
+            this.checkPartes.UseVisualStyleBackColor = true;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(772, 92);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(60, 15);
+            this.lblCategoria.TabIndex = 26;
+            this.lblCategoria.Text = "Categoria";
+            // 
+            // lblPrecioV
+            // 
+            this.lblPrecioV.AutoSize = true;
+            this.lblPrecioV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioV.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPrecioV.Location = new System.Drawing.Point(605, 92);
+            this.lblPrecioV.Name = "lblPrecioV";
+            this.lblPrecioV.Size = new System.Drawing.Size(108, 15);
+            this.lblPrecioV.TabIndex = 24;
+            this.lblPrecioV.Text = "Precio de Venta";
+            // 
+            // txtPrecioVenta
+            // 
+            this.txtPrecioVenta.Location = new System.Drawing.Point(608, 108);
+            this.txtPrecioVenta.Name = "txtPrecioVenta";
+            this.txtPrecioVenta.Size = new System.Drawing.Size(126, 21);
+            this.txtPrecioVenta.TabIndex = 25;
+            // 
+            // lblPrecioC
+            // 
+            this.lblPrecioC.AutoSize = true;
+            this.lblPrecioC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioC.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPrecioC.Location = new System.Drawing.Point(442, 92);
+            this.lblPrecioC.Name = "lblPrecioC";
+            this.lblPrecioC.Size = new System.Drawing.Size(122, 15);
+            this.lblPrecioC.TabIndex = 22;
+            this.lblPrecioC.Text = "Precio de Compra";
+            this.lblPrecioC.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // txtPrecioCompra
+            // 
+            this.txtPrecioCompra.Location = new System.Drawing.Point(445, 108);
+            this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Size = new System.Drawing.Size(133, 21);
+            this.txtPrecioCompra.TabIndex = 23;
+            this.txtPrecioCompra.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+            // 
+            // lblMin
+            // 
+            this.lblMin.AutoSize = true;
+            this.lblMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblMin.Location = new System.Drawing.Point(283, 92);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(116, 15);
+            this.lblMin.TabIndex = 20;
+            this.lblMin.Text = "Cantidad Minima";
+            // 
+            // txtMinima
+            // 
+            this.txtMinima.Location = new System.Drawing.Point(286, 108);
+            this.txtMinima.Name = "txtMinima";
+            this.txtMinima.Size = new System.Drawing.Size(126, 21);
+            this.txtMinima.TabIndex = 21;
+            // 
+            // lblMax
+            // 
+            this.lblMax.AutoSize = true;
+            this.lblMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMax.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblMax.Location = new System.Drawing.Point(129, 92);
+            this.lblMax.Name = "lblMax";
+            this.lblMax.Size = new System.Drawing.Size(119, 15);
+            this.lblMax.TabIndex = 18;
+            this.lblMax.Text = "Cantidad Maxima";
+            // 
+            // txtMaxima
+            // 
+            this.txtMaxima.Location = new System.Drawing.Point(132, 108);
+            this.txtMaxima.Name = "txtMaxima";
+            this.txtMaxima.Size = new System.Drawing.Size(118, 21);
+            this.txtMaxima.TabIndex = 19;
+            // 
+            // lblDescrip
+            // 
+            this.lblDescrip.AutoSize = true;
+            this.lblDescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescrip.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDescrip.Location = new System.Drawing.Point(3, 92);
+            this.lblDescrip.Name = "lblDescrip";
+            this.lblDescrip.Size = new System.Drawing.Size(83, 15);
+            this.lblDescrip.TabIndex = 16;
+            this.lblDescrip.Text = "Descripcion";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(6, 108);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(100, 48);
+            this.txtDescripcion.TabIndex = 17;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblId.Location = new System.Drawing.Point(778, 31);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(19, 15);
+            this.lblId.TabIndex = 14;
+            this.lblId.Text = "id";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(769, 47);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 21);
+            this.txtId.TabIndex = 15;
+            // 
+            // lblSerie
+            // 
+            this.lblSerie.AutoSize = true;
+            this.lblSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSerie.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblSerie.Location = new System.Drawing.Point(605, 31);
+            this.lblSerie.Name = "lblSerie";
+            this.lblSerie.Size = new System.Drawing.Size(41, 15);
+            this.lblSerie.TabIndex = 12;
+            this.lblSerie.Text = "Serie";
+            // 
+            // txtSerie
+            // 
+            this.txtSerie.Location = new System.Drawing.Point(608, 47);
+            this.txtSerie.Name = "txtSerie";
+            this.txtSerie.Size = new System.Drawing.Size(126, 21);
+            this.txtSerie.TabIndex = 13;
+            // 
+            // lblModelo
+            // 
+            this.lblModelo.AutoSize = true;
+            this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblModelo.Location = new System.Drawing.Point(442, 31);
+            this.lblModelo.Name = "lblModelo";
+            this.lblModelo.Size = new System.Drawing.Size(55, 15);
+            this.lblModelo.TabIndex = 10;
+            this.lblModelo.Text = "Modelo";
+            this.lblModelo.Click += new System.EventHandler(this.lblModelo_Click);
+            // 
+            // txtModelo
+            // 
+            this.txtModelo.Location = new System.Drawing.Point(445, 47);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(133, 21);
+            this.txtModelo.TabIndex = 11;
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblMarca.Location = new System.Drawing.Point(283, 31);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(47, 15);
+            this.lblMarca.TabIndex = 8;
+            this.lblMarca.Text = "Marca";
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(286, 47);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(126, 21);
+            this.txtMarca.TabIndex = 9;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblNombre.Location = new System.Drawing.Point(141, 31);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(58, 15);
+            this.lblNombre.TabIndex = 6;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(132, 47);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(118, 21);
+            this.txtNombre.TabIndex = 7;
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblCodigo.Location = new System.Drawing.Point(6, 31);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(52, 15);
+            this.lblCodigo.TabIndex = 4;
+            this.lblCodigo.Text = "Codigo";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(6, 47);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 21);
+            this.txtCodigo.TabIndex = 5;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnProve);
             this.groupBox2.Controls.Add(this.btnTodos);
             this.groupBox2.Controls.Add(this.btnguardar);
             this.groupBox2.Controls.Add(this.btnEliminar);
@@ -129,6 +384,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Acccion";
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(56, 54);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(192, 15);
+            this.lblBuscar.TabIndex = 31;
+            this.lblBuscar.Text = "Buscar x Codigo de Producto";
+            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(56, 31);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(192, 21);
+            this.txtBuscar.TabIndex = 31;
+            // 
             // groupBox3
             // 
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -140,272 +413,46 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data";
             // 
-            // lblCodigo
+            // lblTitulo
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCodigo.Location = new System.Drawing.Point(6, 31);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(52, 15);
-            this.lblCodigo.TabIndex = 4;
-            this.lblCodigo.Text = "Codigo";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitulo.Location = new System.Drawing.Point(353, 13);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(113, 33);
+            this.lblTitulo.TabIndex = 31;
+            this.lblTitulo.Text = "Codigo";
+            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
-            // textBox1
+            // lblProveedor
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 5;
+            this.lblProveedor.AutoSize = true;
+            this.lblProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProveedor.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblProveedor.Location = new System.Drawing.Point(141, 138);
+            this.lblProveedor.Name = "lblProveedor";
+            this.lblProveedor.Size = new System.Drawing.Size(72, 15);
+            this.lblProveedor.TabIndex = 31;
+            this.lblProveedor.Text = "Proveedor";
+            this.lblProveedor.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lblNombre
+            // txtproveedor
             // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblNombre.Location = new System.Drawing.Point(141, 31);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(58, 15);
-            this.lblNombre.TabIndex = 6;
-            this.lblNombre.Text = "Nombre";
+            this.txtproveedor.Location = new System.Drawing.Point(132, 154);
+            this.txtproveedor.Name = "txtproveedor";
+            this.txtproveedor.Size = new System.Drawing.Size(126, 21);
+            this.txtproveedor.TabIndex = 32;
+            this.txtproveedor.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
-            // textBox2
+            // btnProve
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(118, 21);
-            this.textBox2.TabIndex = 7;
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarca.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMarca.Location = new System.Drawing.Point(283, 31);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(47, 15);
-            this.lblMarca.TabIndex = 8;
-            this.lblMarca.Text = "Marca";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(286, 47);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 21);
-            this.textBox3.TabIndex = 9;
-            // 
-            // lblModelo
-            // 
-            this.lblModelo.AutoSize = true;
-            this.lblModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblModelo.Location = new System.Drawing.Point(442, 31);
-            this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(55, 15);
-            this.lblModelo.TabIndex = 10;
-            this.lblModelo.Text = "Modelo";
-            this.lblModelo.Click += new System.EventHandler(this.lblModelo_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(445, 47);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(133, 21);
-            this.textBox4.TabIndex = 11;
-            // 
-            // lblSerie
-            // 
-            this.lblSerie.AutoSize = true;
-            this.lblSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSerie.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblSerie.Location = new System.Drawing.Point(605, 31);
-            this.lblSerie.Name = "lblSerie";
-            this.lblSerie.Size = new System.Drawing.Size(41, 15);
-            this.lblSerie.TabIndex = 12;
-            this.lblSerie.Text = "Serie";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(608, 47);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(126, 21);
-            this.textBox5.TabIndex = 13;
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblId.Location = new System.Drawing.Point(778, 31);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(19, 15);
-            this.lblId.TabIndex = 14;
-            this.lblId.Text = "id";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(769, 47);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 15;
-            // 
-            // lblDescrip
-            // 
-            this.lblDescrip.AutoSize = true;
-            this.lblDescrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescrip.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblDescrip.Location = new System.Drawing.Point(3, 92);
-            this.lblDescrip.Name = "lblDescrip";
-            this.lblDescrip.Size = new System.Drawing.Size(83, 15);
-            this.lblDescrip.TabIndex = 16;
-            this.lblDescrip.Text = "Descripcion";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(6, 108);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 48);
-            this.textBox7.TabIndex = 17;
-            // 
-            // lblMax
-            // 
-            this.lblMax.AutoSize = true;
-            this.lblMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMax.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMax.Location = new System.Drawing.Point(129, 92);
-            this.lblMax.Name = "lblMax";
-            this.lblMax.Size = new System.Drawing.Size(119, 15);
-            this.lblMax.TabIndex = 18;
-            this.lblMax.Text = "Cantidad Maxima";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(132, 108);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(118, 21);
-            this.textBox8.TabIndex = 19;
-            // 
-            // lblMin
-            // 
-            this.lblMin.AutoSize = true;
-            this.lblMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblMin.Location = new System.Drawing.Point(283, 92);
-            this.lblMin.Name = "lblMin";
-            this.lblMin.Size = new System.Drawing.Size(116, 15);
-            this.lblMin.TabIndex = 20;
-            this.lblMin.Text = "Cantidad Minima";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(286, 108);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(126, 21);
-            this.textBox9.TabIndex = 21;
-            // 
-            // lblPrecioC
-            // 
-            this.lblPrecioC.AutoSize = true;
-            this.lblPrecioC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioC.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPrecioC.Location = new System.Drawing.Point(442, 92);
-            this.lblPrecioC.Name = "lblPrecioC";
-            this.lblPrecioC.Size = new System.Drawing.Size(122, 15);
-            this.lblPrecioC.TabIndex = 22;
-            this.lblPrecioC.Text = "Precio de Compra";
-            this.lblPrecioC.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(445, 108);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(133, 21);
-            this.textBox10.TabIndex = 23;
-            this.textBox10.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
-            // 
-            // lblPrecioV
-            // 
-            this.lblPrecioV.AutoSize = true;
-            this.lblPrecioV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioV.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPrecioV.Location = new System.Drawing.Point(605, 92);
-            this.lblPrecioV.Name = "lblPrecioV";
-            this.lblPrecioV.Size = new System.Drawing.Size(112, 15);
-            this.lblPrecioV.TabIndex = 24;
-            this.lblPrecioV.Text = "lPrecio de Venta";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(608, 108);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(126, 21);
-            this.textBox11.TabIndex = 25;
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(772, 92);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(60, 15);
-            this.lblCategoria.TabIndex = 26;
-            this.lblCategoria.Text = "Categoria";
-            // 
-            // checkPartes
-            // 
-            this.checkPartes.AutoSize = true;
-            this.checkPartes.Location = new System.Drawing.Point(769, 110);
-            this.checkPartes.Name = "checkPartes";
-            this.checkPartes.Size = new System.Drawing.Size(61, 19);
-            this.checkPartes.TabIndex = 27;
-            this.checkPartes.Text = "Partes";
-            this.checkPartes.UseVisualStyleBackColor = true;
-            // 
-            // checAccseorios
-            // 
-            this.checAccseorios.AutoSize = true;
-            this.checAccseorios.Location = new System.Drawing.Point(769, 133);
-            this.checAccseorios.Name = "checAccseorios";
-            this.checAccseorios.Size = new System.Drawing.Size(85, 19);
-            this.checAccseorios.TabIndex = 28;
-            this.checAccseorios.Text = "Accesorios";
-            this.checAccseorios.UseVisualStyleBackColor = true;
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblCantidad.Location = new System.Drawing.Point(141, 138);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(64, 15);
-            this.lblCantidad.TabIndex = 29;
-            this.lblCantidad.Text = "Cantidad";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(132, 154);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(126, 21);
-            this.textBox12.TabIndex = 30;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(56, 31);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(192, 21);
-            this.txtBuscar.TabIndex = 31;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(56, 54);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(192, 15);
-            this.lblBuscar.TabIndex = 31;
-            this.lblBuscar.Text = "Buscar x Codigo de Producto";
-            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+            this.btnProve.Image = global::Ventas.Properties.Resources.proveedor;
+            this.btnProve.Location = new System.Drawing.Point(593, 23);
+            this.btnProve.Name = "btnProve";
+            this.btnProve.Size = new System.Drawing.Size(64, 47);
+            this.btnProve.TabIndex = 37;
+            this.btnProve.UseVisualStyleBackColor = true;
             // 
             // btnTodos
             // 
@@ -439,7 +486,7 @@
             // btnActualizar
             // 
             this.btnActualizar.Image = global::Ventas.Properties.Resources.actu;
-            this.btnActualizar.Location = new System.Drawing.Point(696, 22);
+            this.btnActualizar.Location = new System.Drawing.Point(678, 20);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(56, 48);
             this.btnActualizar.TabIndex = 33;
@@ -448,7 +495,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = global::Ventas.Properties.Resources.AgregarCanti;
-            this.btnAgregar.Location = new System.Drawing.Point(630, 22);
+            this.btnAgregar.Location = new System.Drawing.Point(359, 19);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(53, 48);
             this.btnAgregar.TabIndex = 32;
@@ -473,18 +520,6 @@
             this.btnHome.Size = new System.Drawing.Size(50, 36);
             this.btnHome.TabIndex = 1;
             this.btnHome.UseVisualStyleBackColor = true;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTitulo.Location = new System.Drawing.Point(353, 13);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(113, 33);
-            this.lblTitulo.TabIndex = 31;
-            this.lblTitulo.Text = "Codigo";
-            this.lblTitulo.Click += new System.EventHandler(this.lblTitulo_Click);
             // 
             // FormProduct
             // 
@@ -517,34 +552,34 @@
         private System.Windows.Forms.Button btnHome;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Label lblPrecioC;
-        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox txtPrecioCompra;
         public System.Windows.Forms.Label lblMin;
-        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox txtMinima;
         public System.Windows.Forms.Label lblMax;
-        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox txtMaxima;
         public System.Windows.Forms.Label lblDescrip;
-        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox txtDescripcion;
         public System.Windows.Forms.Label lblId;
-        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox txtId;
         public System.Windows.Forms.Label lblSerie;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox txtSerie;
         public System.Windows.Forms.Label lblModelo;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox txtModelo;
         public System.Windows.Forms.Label lblMarca;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox txtMarca;
         public System.Windows.Forms.Label lblNombre;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.Label lblCodigo;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox txtCodigo;
         public System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Label lblCantidad;
-        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox txtCantidad;
         public System.Windows.Forms.CheckBox checAccseorios;
         public System.Windows.Forms.CheckBox checkPartes;
         public System.Windows.Forms.Label lblCategoria;
         public System.Windows.Forms.Label lblPrecioV;
-        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.TextBox txtPrecioVenta;
         public System.Windows.Forms.Button btnguardar;
         public System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.Button btnActualizar;
@@ -554,5 +589,8 @@
         public System.Windows.Forms.Button btnBuscar;
         public System.Windows.Forms.Button btnTodos;
         public System.Windows.Forms.Label lblTitulo;
+        public System.Windows.Forms.Label lblProveedor;
+        public System.Windows.Forms.TextBox txtproveedor;
+        public System.Windows.Forms.Button btnProve;
     }
 }

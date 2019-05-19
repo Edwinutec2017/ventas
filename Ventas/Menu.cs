@@ -298,6 +298,55 @@ namespace Ventas
             repart.Show();
         }
 
+        private void nuevoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void naturalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Proveedor prove = new Proveedor();
+            prove.Id = this.id;
+            prove.Nombre = this.nombre;
+            prove.Rol = this.rol;
+            prove.Accion = 1;
+            prove.Show();
+        }
+
+        private void juridicoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Proveedor prove = new Proveedor();
+            prove.Id = this.id;
+            prove.Nombre = this.nombre;
+            prove.Rol = this.rol;
+            prove.Accion = 2;
+            prove.Show();
+        }
+
+        private void buscarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Proveedor prove = new Proveedor();
+            prove.Id = this.id;
+            prove.Nombre = this.nombre;
+            prove.Rol = this.rol;
+            prove.Accion = 3;
+            prove.Show();
+        }
+
+        private void mantenimientoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Proveedor prove = new Proveedor();
+            prove.Id = this.id;
+            prove.Nombre = this.nombre;
+            prove.Rol = this.rol;
+            prove.Accion = 4;
+            prove.Show();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

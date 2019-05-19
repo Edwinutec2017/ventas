@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="controlador\CrudCliente.cs" />
     <Compile Include="controlador\CrudFactura.cs" />
+    <Compile Include="controlador\CrudProveedor.cs" />
     <Compile Include="controlador\CrudUser.cs" />
     <Compile Include="controlador\FacClienselect.cs" />
     <Compile Include="controlador\SelecProduc.cs" />
@@ -144,6 +145,12 @@
     <Compile Include="form\FormProduct.Designer.cs">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="form\FormProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\FormProveedor.Designer.cs">
+      <DependentUpon>FormProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\FormRepor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +185,7 @@
     <Compile Include="modelo\Clientes.cs" />
     <Compile Include="modelo\Factura.cs" />
     <Compile Include="modelo\InisioSeccion.cs" />
+    <Compile Include="modelo\Proveedor.cs" />
     <Compile Include="modelo\Usuarios.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,6 +193,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedor.Designer.cs">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="ReportAccesorios.cs">
       <AutoGen>True</AutoGen>
@@ -277,6 +291,9 @@
     <EmbeddedResource Include="form\FormProduct.resx">
       <DependentUpon>FormProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\FormProveedor.resx">
+      <DependentUpon>FormProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\FormRepor.resx">
       <DependentUpon>FormRepor.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +313,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedor.resx">
+      <DependentUpon>Proveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportAccesorios.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -352,6 +372,7 @@
     <Content Include="img\otros\guardar.png" />
     <Content Include="img\otros\impresora.png" />
     <Content Include="img\otros\login.png" />
+    <Content Include="img\otros\proveedor.png" />
     <Content Include="img\otros\salir.png" />
     <None Include="img\otros\mas.png" />
     <None Include="img\otros\buscar.png" />
