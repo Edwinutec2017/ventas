@@ -12,9 +12,11 @@ namespace Ventas
 {
     public partial class Proveedor : form.FormProveedor
     {
-        private int id, rol,accion;
-        private String nombre;
-        /**/
+        private int id, rol,accion,idprove;
+        private String nombre,nombreprove;
+
+        private string codigo, nombreproduc, marca, modelo, serie, idproduc, categoria, maxima, minima, pv, pc;
+
         public Proveedor()
         {
             InitializeComponent();
@@ -48,12 +50,52 @@ namespace Ventas
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu menu = new Ventas.Menu();
-            menu.Id = this.id;
-            menu.Nombre = this.nombre;
-            menu.Rol = this.rol;
-            menu.Show();
+            if (this.accion.Equals(5))
+            {
+                this.Hide();
+                Productos product = new Productos();
+                product.Id = this.id;
+                product.Nombre = this.nombre;
+                product.Rol = this.rol;
+                product.IdProve = this.idprove;
+                product.NombreProve = this.nombreprove;
+                product.Accion = this.accion;
+                product.Show();
+            } else if (this.accion.Equals(6)) {
+               
+                    this.Hide();
+                    Productos product = new Productos();
+                    product.Id = this.id;
+                    product.Nombre = this.nombre;
+                    product.Rol = this.rol;
+                    product.IdProve = this.idprove;
+                    product.NombreProve = this.nombreprove;
+                    product.Accion = this.accion;
+                /**/
+                product.Codigo = this.codigo;
+                product.Nombreproduc = this.nombreproduc;
+                product.Marca = this.marca;
+                product.Modelo = this.modelo;
+                product.Serie = this.serie;
+                product.Idproduc = this.idproduc;
+                product.Categoria = this.categoria;
+                product.Maxima = this.maxima;
+                product.Minima = this.minima;
+                product.Pv = this.pv;
+                product.Pc = this.pc;
+              
+                    product.Show();
+                
+
+            }
+            else {
+                this.Hide();
+                Menu menu = new Ventas.Menu();
+                menu.Id = this.id;
+                menu.Nombre = this.nombre;
+                menu.Rol = this.rol;
+                menu.Show();
+            }
 
 
         }
@@ -134,6 +176,25 @@ namespace Ventas
                 chekMediano.Visible = false;
                 chekPeque.Visible = false;
                 btnGuardar.Visible = false;
+            } else if (this.accion.Equals(5)) {
+                lblTitulo.Text = "Agregar  Proveedor";
+                lblBuscar.Text = "Busqueda x Registro o DUI";
+                btnActualizar.Visible = false;
+                btnEliminar.Visible = false;
+                lblTipo.Visible = false;
+                checGrande.Visible = false;
+                chekMediano.Visible = false;
+                chekPeque.Visible = false;
+            } else if (this.accion.Equals(6)) {
+                lblTitulo.Text = "Agregar  Proveedor";
+                lblBuscar.Text = "Busqueda Nombre de proveedor";
+                btnActualizar.Visible = false;
+                btnEliminar.Visible = false;
+                lblTipo.Visible = false;
+                checGrande.Visible = false;
+                chekMediano.Visible = false;
+                chekPeque.Visible = false;
+                txtbuscar.Text = this.nombreprove;
             }
         }
 
@@ -159,16 +220,33 @@ namespace Ventas
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtbuscar.Text.Equals(""))
-            {
-                MessageBox.Show("No a dijitado Que buscar");
-                txtbuscar.Focus();
-            }
-            else {
-               
-                controlador.CrudProveedor prove = new controlador.CrudProveedor();
-                prove.datosBusProve(txtbuscar.Text,dataProve);
-                txtbuscar.Text = "";
+            if (this.accion.Equals(6)) {
+                if (txtbuscar.Text.Equals(""))
+                {
+                    MessageBox.Show("No a dijitado Que buscar");
+                    txtbuscar.Focus();
+                }
+                else
+                {
+
+                    controlador.CrudProveedor prove = new controlador.CrudProveedor();
+                    prove.datosBusNombProve(txtbuscar.Text, dataProve);
+                    txtbuscar.Text = "";
+                }
+
+            } else {
+                if (txtbuscar.Text.Equals(""))
+                {
+                    MessageBox.Show("No a dijitado Que buscar");
+                    txtbuscar.Focus();
+                }
+                else
+                {
+
+                    controlador.CrudProveedor prove = new controlador.CrudProveedor();
+                    prove.datosBusProve(txtbuscar.Text, dataProve);
+                    txtbuscar.Text = "";
+                }
             }
         }
 
@@ -192,9 +270,26 @@ namespace Ventas
                 txtClasificacion.Text = dataProve.Rows[i].Cells[8].Value.ToString();
                 btnActualizar.Enabled = true;
                 btnEliminar.Enabled = true;
-            } 
+            } else if (this.accion.Equals(5) || this.accion.Equals(6)) {
+                txtNombre.Enabled = true;
+                txtDireccion.Enabled = true;
+                txtRazon.Enabled = true;
+                txtCorreo.Enabled = true;
+                txtTelefono.Enabled = true;
+                int i = dataProve.CurrentRow.Index;
+                txtId.Text = dataProve.Rows[i].Cells[0].Value.ToString();
+                txtNombre.Text = dataProve.Rows[i].Cells[1].Value.ToString();
+                txtDireccion.Text = dataProve.Rows[i].Cells[2].Value.ToString();
+                txtRazon.Text = dataProve.Rows[i].Cells[3].Value.ToString();
+                txtNIt.Text = dataProve.Rows[i].Cells[4].Value.ToString();
+                txtCorreo.Text = dataProve.Rows[i].Cells[5].Value.ToString();
+                txtTelefono.Text = dataProve.Rows[i].Cells[6].Value.ToString();
+                txtReg.Text = dataProve.Rows[i].Cells[7].Value.ToString();
+                txtClasificacion.Text = dataProve.Rows[i].Cells[8].Value.ToString();
+                btnGuardar.Enabled = true;
+            }
          
-          /*  txtId.Text = dataCliente.Rows[i].Cells[0].Value.ToString();*/
+       
 
 
         }
@@ -229,7 +324,7 @@ namespace Ventas
                 }
 
             }
-            else if(this.accion.Equals(2)){
+            else if (this.accion.Equals(2)) {
                 if (checGrande.Checked && chekMediano.Checked && chekPeque.Checked || checGrande.Checked && chekMediano.Checked || checGrande.Checked && chekPeque.Checked || chekMediano.Checked && chekPeque.Checked)
                 {
                     MessageBox.Show("Solo deve de selecciona un tipo ");
@@ -263,6 +358,41 @@ namespace Ventas
                         MessageBox.Show(prove.Msg);
                     }
                 }
+            } else if (this.accion.Equals(5)) {
+                this.Hide();
+                MessageBox.Show("Proveedor agregado");
+                Productos product = new Productos();
+                product.Id = this.id;
+                product.Nombre = this.nombre;
+                product.Rol = this.rol;
+                product.IdProve = Convert.ToInt32(txtId.Text);
+                product.NombreProve = txtNombre.Text;
+                product.Accion = this.accion;
+                product.Show();
+            } else if (this.accion.Equals(6)) {
+                this.Hide();
+                Productos product = new Productos();
+                product.Id = this.id;
+                product.Nombre = this.nombre;
+                product.Rol = this.rol;
+                product.IdProve = Convert.ToInt32(txtId.Text);
+                product.NombreProve = txtNombre.Text;
+                product.Accion = this.accion;
+                /**/
+                product.Codigo = this.codigo;
+                product.Nombreproduc = this.nombreproduc;
+                product.Marca = this.marca;
+                product.Modelo = this.modelo;
+                product.Serie = this.serie;
+                product.Idproduc = this.idproduc;
+                product.Categoria = this.categoria;
+                product.Maxima = this.maxima;
+                product.Minima = this.minima;
+                product.Pv = this.pv;
+                product.Pc = this.pc;
+              
+                product.Show();
+
             }
 
 
@@ -352,6 +482,175 @@ namespace Ventas
             set
             {
                 rol = value;
+            }
+        }
+
+        public int Idprove
+        {
+            get
+            {
+                return idprove;
+            }
+
+            set
+            {
+                idprove = value;
+            }
+        }
+
+        public string Nombreprove
+        {
+            get
+            {
+                return nombreprove;
+            }
+
+            set
+            {
+                nombreprove = value;
+            }
+        }
+
+        public string Codigo
+        {
+            get
+            {
+                return codigo;
+            }
+
+            set
+            {
+                codigo = value;
+            }
+        }
+
+        public string Nombreproduc
+        {
+            get
+            {
+                return nombreproduc;
+            }
+
+            set
+            {
+                nombreproduc = value;
+            }
+        }
+
+        public string Marca
+        {
+            get
+            {
+                return marca;
+            }
+
+            set
+            {
+                marca = value;
+            }
+        }
+
+        public string Modelo
+        {
+            get
+            {
+                return modelo;
+            }
+
+            set
+            {
+                modelo = value;
+            }
+        }
+
+        public string Serie
+        {
+            get
+            {
+                return serie;
+            }
+
+            set
+            {
+                serie = value;
+            }
+        }
+
+        public string Idproduc
+        {
+            get
+            {
+                return idproduc;
+            }
+
+            set
+            {
+                idproduc = value;
+            }
+        }
+
+        public string Categoria
+        {
+            get
+            {
+                return categoria;
+            }
+
+            set
+            {
+                categoria = value;
+            }
+        }
+
+        public string Maxima
+        {
+            get
+            {
+                return maxima;
+            }
+
+            set
+            {
+                maxima = value;
+            }
+        }
+
+        public string Minima
+        {
+            get
+            {
+                return minima;
+            }
+
+            set
+            {
+                minima = value;
+            }
+        }
+
+        public string Pv
+        {
+            get
+            {
+                return pv;
+            }
+
+            set
+            {
+                pv = value;
+            }
+        }
+
+        public string Pc
+        {
+            get
+            {
+                return pc;
+            }
+
+            set
+            {
+                pc = value;
             }
         }
     }

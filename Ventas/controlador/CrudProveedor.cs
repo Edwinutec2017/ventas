@@ -72,8 +72,33 @@ namespace Ventas.controlador
 
         }
 
+        /*para buscar  x nombre */
 
- /*para eliminar un registro*/
+        public void datosBusNombProve(String nombre, DataGridView datagriw)
+        {
+            try
+            {
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute selctxNombreProve '"+nombre+"'";
+              
+                da = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                da.Fill(dt);
+                datagriw.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                datagriw = null;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+        }
+        /*para eliminar un registro*/
         public Boolean eliminarProve(int id)
         {
             con = new SqlConnection(conex.Cadena);

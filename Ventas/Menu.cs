@@ -347,6 +347,67 @@ namespace Ventas
             prove.Show();
         }
 
+        private void nuevoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Productos produc = new Productos();
+            produc.Id = this.id;
+            produc.Nombre = this.nombre;
+            produc.Rol = this.rol;
+            produc.Accion = 1;
+            produc.Show();
+        }
+
+        private void buscarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Productos produc = new Productos();
+            produc.Id = this.id;
+            produc.Nombre = this.nombre;
+            produc.Rol = this.rol;
+            produc.Accion = 2;
+            produc.Show();
+        }
+
+        private void mnatenimentoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Productos produc = new Productos();
+            produc.Id = this.id;
+            produc.Nombre = this.nombre;
+            produc.Rol = this.rol;
+            produc.Accion = 3;
+            produc.Show();
+        }
+
+        private void agregarAInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void productoNuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inventario inv = new Inventario();
+            inv.Id = this.id;
+            inv.Nombre = this.nombre;
+            inv.Rol = this.rol;
+            inv.Accion = 1;
+            inv.Show();
+               
+        }
+
+        private void productoExistenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inventario inv = new Inventario();
+            inv.Id = this.id;
+            inv.Nombre = this.nombre;
+            inv.Rol = this.rol;
+            inv.Accion = 2;
+            inv.Show();
+        }
+
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

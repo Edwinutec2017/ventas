@@ -20,7 +20,7 @@ namespace Ventas.classConexion
         public ConexionDb()
         {
             Cadena = $"Data Source={usersql};Initial Catalog={namedb}; Integrated Security=True";
-
+           
         }
         public string Cadena
         {

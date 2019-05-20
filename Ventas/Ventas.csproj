@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="controlador\CrudCliente.cs" />
     <Compile Include="controlador\CrudFactura.cs" />
+    <Compile Include="controlador\CrudProducto.cs" />
     <Compile Include="controlador\CrudProveedor.cs" />
     <Compile Include="controlador\CrudUser.cs" />
     <Compile Include="controlador\FacClienselect.cs" />
@@ -108,6 +109,12 @@
     </Compile>
     <Compile Include="form\Confirmar.Designer.cs">
       <DependentUpon>Confirmar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\FormAgregarProductoInve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\FormAgregarProductoInve.Designer.cs">
+      <DependentUpon>FormAgregarProductoInve.cs</DependentUpon>
     </Compile>
     <Compile Include="form\FormBusquedafactura.cs">
       <SubType>Form</SubType>
@@ -175,6 +182,12 @@
     <Compile Include="form\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,8 +198,15 @@
     <Compile Include="modelo\Clientes.cs" />
     <Compile Include="modelo\Factura.cs" />
     <Compile Include="modelo\InisioSeccion.cs" />
+    <Compile Include="modelo\Productos.cs" />
     <Compile Include="modelo\Proveedor.cs" />
     <Compile Include="modelo\Usuarios.cs" />
+    <Compile Include="Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -273,6 +293,9 @@
     <EmbeddedResource Include="form\Confirmar.resx">
       <DependentUpon>Confirmar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="form\FormAgregarProductoInve.resx">
+      <DependentUpon>FormAgregarProductoInve.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\FormBusquedafactura.resx">
       <DependentUpon>FormBusquedafactura.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,8 +329,14 @@
     <EmbeddedResource Include="form\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -372,6 +401,9 @@
     <Content Include="img\otros\guardar.png" />
     <Content Include="img\otros\impresora.png" />
     <Content Include="img\otros\login.png" />
+    <Content Include="img\otros\masprod.png" />
+    <Content Include="img\otros\menos.png" />
+    <Content Include="img\otros\menosproduc.png" />
     <Content Include="img\otros\proveedor.png" />
     <Content Include="img\otros\salir.png" />
     <None Include="img\otros\mas.png" />
