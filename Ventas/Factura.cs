@@ -12,7 +12,7 @@ namespace Ventas
 {
     public partial class Factura : form.FormFactura
     {
-        private int id, rol;
+        private int id, rol, idfacXml;
         private String nombre;
         /*para factura*/
         private int idCliente;
@@ -594,10 +594,43 @@ namespace Ventas
 
                     fat.insertEncabezado();
 
-                    if (fat.Mensaje.Equals("Factura Guardada"))
+                    if (fat.Mensaje.Equals("Factura Guardada........"))
                     {
                         MessageBox.Show(fat.Mensaje);
-                        /*para aser la redireccion a imprimir la factura */
+                        controlador.GenerarXml xml = new controlador.GenerarXml();
+                        idfacXml = xml.buscaIdFcat(txtFactura.Text);
+                        if (idfacXml.Equals(0))
+                        {
+                            MessageBox.Show("No se  pudo generar la busqueda");
+                        }
+                        else
+                        {
+                            if (xml.generar(txtFactura.Text, idfacXml))
+                            {
+                                if (xml.generarArchivo())
+                                {
+                                    //MessageBox.Show("Factura Generada.....");
+                                    this.Hide();
+                                    reporFact.ReporFacturacs rpf = new reporFact.ReporFacturacs();
+                                    rpf.Id = this.id;
+                                    rpf.Nombre = this.nombre;
+                                    rpf.Rol = this.rol;
+                                    rpf.Show();
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se pudo generar el xml ");
+                                }
+
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error de Conexion");
+
+                            }
+                        }
 
                     }
                     else

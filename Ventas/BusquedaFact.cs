@@ -12,7 +12,7 @@ namespace Ventas
 {
     public partial class BusquedaFact : form.FormBusquedafactura
     {
-        private int id, rol,accion,idFact;
+        private int id, rol,accion,idFact,idfacXml;
         private String nombre;
        
         public BusquedaFact()
@@ -159,6 +159,7 @@ namespace Ventas
                 lblTitulo.Text = "BUSQUEDA DE FACTURA";
                 controlador.CrudFactura fact = new controlador.CrudFactura();
                 fact.buscarFactura(1, "n", dataFact);
+                limipiar();
             }
             else
             {
@@ -167,6 +168,7 @@ namespace Ventas
                     lblTitulo.Text = "DEVOLUCION DE FACTURA TOTAL";
                     controlador.CrudFactura fact = new controlador.CrudFactura();
                     fact.buscarFactura(1, "n", dataFact);
+                    limipiar();
                 }
                 else
                 {
@@ -175,6 +177,7 @@ namespace Ventas
                         lblTitulo.Text = "MANTENIMIENTO DE FACTURA";
                         controlador.CrudFactura fact = new controlador.CrudFactura();
                         fact.buscarFactura(1, "n", dataFact);
+                        limipiar();
                     }
                     else
                     {
@@ -185,12 +188,14 @@ namespace Ventas
                             lblTitulo.Text = "DEVOLUCION X DETALLE ";
                             controlador.CrudFactura fact = new controlador.CrudFactura();
                             fact.buscarFactura(1, "n", dataFact);
+                            limipiar();
                         }
                         else
                         {
                             lblTitulo.Text = "BUSQUEDA DE DEVOLUCIONES";
                             controlador.CrudFactura fact = new controlador.CrudFactura();
                             fact.buscarFacturaDevolucion(1, "n", dataFact);
+                            limipiar();
                         }
                     }
                 }
@@ -202,12 +207,13 @@ namespace Ventas
             
             if (this.accion.Equals(4) || this.accion.Equals(5))
             {
+                btnImprimir.Visible = true;
                 btnEli.Enabled = true;
                 btnActu.Enabled = true;
             }
             else {
                 if (this.accion.Equals(6)) {
-                    btnImprimir.Visible = false;
+                    btnImprimir.Visible = true;
                     btnDevDetalle.Enabled = true;
                 } else {
                     btnImprimir.Visible = true;
@@ -226,7 +232,7 @@ namespace Ventas
             txtIva.Text="$ "+ dataFact.Rows[i].Cells[7].Value.ToString();
             txtTotal.Text= "$ "+ dataFact.Rows[i].Cells[8].Value.ToString();
             if (this.accion.Equals(3)) {
-                btnGuardar.Visible = false;
+                btnGuardar.Visible = true;
             }
 
         }
@@ -330,6 +336,55 @@ namespace Ventas
             ac.Show();
         }
 
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            controlador.GenerarXml xml = new controlador.GenerarXml();
+            idfacXml = xml.buscaIdFcat(txtFact.Text);
+            if (idfacXml.Equals(0)) {
+                MessageBox.Show("No se  pudo generar la busqueda");
+            }
+            else {
+                if (xml.generar(txtFact.Text,idfacXml)) {
+                    if (xml.generarArchivo()) {
+                        MessageBox.Show("Factura Generada.....");
+                        this.Hide();
+                        reporFact.ReporFacturacs rpf = new reporFact.ReporFacturacs();
+                        rpf.Id = this.id;
+                        rpf.Nombre = this.nombre;
+                        rpf.Rol = this.rol;
+                        rpf.Show();
+
+                    }
+                    else {
+                        MessageBox.Show("No se pudo generar el xml ");
+                    }
+
+
+                }
+                else {
+                    MessageBox.Show("Error de Conexion");
+
+                } 
+            }
+
+
+        }
+
+        private void txtVende_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void limipiar() {
+            txtFact.Text = "";
+            txtVende.Text = "";
+            txtCliente.Text = "";
+            txtFecha.Text = "";
+            txtPago.Text = "";
+            txtSub.Text = "";
+            txtIva.Text = "";
+            txtTotal.Text = "";
+            }
         public int Rol
         {
             get

@@ -68,6 +68,10 @@
             // 
             this.lblCliente.Location = new System.Drawing.Point(444, 18);
             // 
+            // txtVende
+            // 
+            this.txtVende.TextChanged += new System.EventHandler(this.txtVende_TextChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Location = new System.Drawing.Point(32, 224);
@@ -76,6 +80,7 @@
             // btnImprimir
             // 
             this.btnImprimir.Location = new System.Drawing.Point(876, 23);
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnTodos
             // 
