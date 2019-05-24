@@ -134,3 +134,13 @@ C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ve
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.form.FormAgregarProductoInve.resources
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.Inventario.resources
 C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReporFacturacs.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReportClientes.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReportDevoluciones.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReporPartes.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReporAcce.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReporPt.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.form.FormReporVentas.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ClientVende.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReporFacCliente.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.FormFacVende.resources
+C:\Users\Edwin\Desktop\proyecto electiva4\ventasEngit\ventas\Ventas\obj\Debug\Ventas.reporFact.ReportTodasFact.resources

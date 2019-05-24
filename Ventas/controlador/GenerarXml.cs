@@ -103,6 +103,344 @@ namespace Ventas.controlador
             return idfa;
         }
 
+        /*clientes*/
+        public Boolean generarListClientes()
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute ReporteCliente";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "ventas");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public Boolean generarArchivoCliente()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "cliente.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
 
+        }
+        /*-----------------------------*/
+        /*DEVOLUCIONES TOTAL*/
+        public Boolean generarLisDevoluciones()
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute repDev";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "ventas");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public Boolean generarArchivoDev()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "devoluciones.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+        /*-----------------------------*/
+      
+        /*CATALOGOS accesorios*/
+        public Boolean generarLisPartes()
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute repProdAccesorios";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "catalogos");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public Boolean generarArchivoPartes()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "partes.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+        /*-----------------------------*/
+        /*CATALOGOS accesorios*/
+        public Boolean generarLisAceesorios()
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = " execute repProdPartes";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "catalogos");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public Boolean generarArchivoAceesorio()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "accesorios.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+        /*-----------------------------*/
+        /*factura */
+        public Boolean generarFacCliente(int id)
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = " execute selefFactClientVende  1,"+id+"";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "catalogos");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        public Boolean generarArchivoRerpFacCliente()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "reporfaccliente.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+        /*-----------------------------*/
+        /*-----------------------------*/
+        /*factura */
+        public Boolean generarFacVendedor(int id)
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = " execute selefFactClientVende  2," + id + "";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "catalogos");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public Boolean generarArchivoRerpFacVendedor()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "reporfacVendedor.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+        /*-----------------------------*/
+        /*factura */
+        public Boolean generarFacTodos()
+        {
+            try
+            {
+                /*consulta*/
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute repVent";
+                ad = new SqlDataAdapter(sql, con);
+                ad.TableMappings.Add("report1", ".");
+                ds = new DataSet("Reporte");
+                ad.Fill(ds, "catalogos");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public Boolean generarArchivoRerpFacTodos()
+        {
+            try
+            {
+                /*1 se crear el directorio*/
+                a = "C:";
+                b = "\\reporte";
+                c = a + b;
+                Directory.CreateDirectory(c);
+                /*2 se genera el archivo xml*/
+                b = "\\reporte\\";
+                d = "facttodas.xml";
+                c = a + b + d;
+                ds.WriteXml(c, XmlWriteMode.WriteSchema);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return false;
+            }
+
+        }
+        /*-----------------------------*/
     }
 }

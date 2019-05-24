@@ -236,7 +236,23 @@ namespace Ventas
         }
         private void reporteDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-       
+            controlador.GenerarXml xml = new controlador.GenerarXml();
+            if (xml.generarListClientes()) {
+                if (xml.generarArchivoCliente()) {
+                    MessageBox.Show("Reporte Generado....");
+                    this.Hide();
+                    reporFact.ReportClientes cliente = new reporFact.ReportClientes();
+                    cliente.Id = this.id;
+                    cliente.Nombre = this.nombre;
+                    cliente.Rol = this.rol;
+                    cliente.Show();
+                }
+                else {
+                    MessageBox.Show("No se puede generar el reporte....");
+                }
+            } else {
+                MessageBox.Show("No se puede generar el reporte....");
+            }
 
 
         }
@@ -254,48 +270,96 @@ namespace Ventas
 
         private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ReportVentas reporteVenta = new ReportVentas();
-            reporteVenta.Id = this.id;
-            reporteVenta.Nombre = this.nombre;
-            reporteVenta.Rol = this.rol;
-            reporteVenta.Show();
+            
            
         }
 
         private void devolucionToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ReportDevolucion devolucion = new ReportDevolucion();
-            devolucion.Id = this.id;
-            devolucion.Nombre = this.nombre;
-            devolucion.Rol = this.rol;
-            devolucion.Show();
+
+            controlador.GenerarXml xml = new controlador.GenerarXml();
+            if (xml.generarLisDevoluciones())
+            {
+                if (xml.generarArchivoDev())
+                {
+                    MessageBox.Show("Reporte Generado....");
+                    this.Hide();
+                    reporFact.ReportDevoluciones devolucion = new reporFact.ReportDevoluciones();
+                    devolucion.Id = this.id;
+                    devolucion.Nombre = this.nombre;
+                    devolucion.Rol = this.rol;
+                    devolucion.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede generar el reporte....");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se puede generar el reporte....");
+            }
+
+           
         }
 
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+        
 
         }
 
         private void partesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ReportProductosPartes repart = new ReportProductosPartes();
-            repart.Id = this.id;
-            repart.Nombre = this.nombre;
-            repart.Rol = this.rol;
-            repart.Show();
+            controlador.GenerarXml xml = new controlador.GenerarXml();
+            if (xml.generarLisAceesorios())
+            {
+                if (xml.generarArchivoAceesorio())
+                {
+                    MessageBox.Show("Reporte Generado....");
+                    this.Hide();
+                    reporFact.ReporPt report = new reporFact.ReporPt();
+                    report.Id = this.id;
+                    report.Nombre = this.nombre;
+                    report.Rol = this.rol;
+                    report.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede generar el reporte....");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se puede generar el reporte....");
+            }
+
         }
 
         private void accesoriosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ReportProductosAccesorios repart = new ReportProductosAccesorios();
-            repart.Id = this.id;
-            repart.Nombre = this.nombre;
-            repart.Rol = this.rol;
-            repart.Show();
+            controlador.GenerarXml xml = new controlador.GenerarXml();
+            if (xml.generarLisPartes())
+            {
+                if (xml.generarArchivoPartes())
+                {
+                    MessageBox.Show("Reporte Generado....");
+                    this.Hide();
+                    reporFact.ReporAcce report = new reporFact.ReporAcce();
+                    report.Id = this.id;
+                    report.Nombre = this.nombre;
+                    report.Rol = this.rol;
+                    report.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede generar el reporte....");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se puede generar el reporte....");
+            }
         }
 
         private void nuevoProveedorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -406,6 +470,65 @@ namespace Ventas
             inv.Rol = this.rol;
             inv.Accion = 2;
             inv.Show();
+        }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporFact.ClientVende repo = new reporFact.ClientVende();
+            repo.Id = this.id;
+            repo.Nombre = this.nombre;
+            repo.Rol = this.rol;
+            repo.Accion = 2;
+            repo.Show();
+        }
+
+        private void vendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            reporFact.ClientVende repo = new reporFact.ClientVende();
+            repo.Id = this.id;
+            repo.Nombre = this.nombre;
+            repo.Rol = this.rol;
+            repo.Accion = 1;
+            repo.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void todasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            controlador.GenerarXml xml = new controlador.GenerarXml();
+            if (xml.generarFacTodos())
+            {
+                if (xml.generarArchivoRerpFacTodos())
+                {
+                    MessageBox.Show("Reporte Generado....");
+                    this.Hide();
+                    reporFact.ReportTodasFact cliente = new reporFact.ReportTodasFact();
+                    cliente.Id = this.id;
+                    cliente.Nombre = this.nombre;
+                    cliente.Rol = this.rol;
+                    cliente.Show();
+                }
+                else
+                {
+                    MessageBox.Show("No se puede generar el reporte....");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se puede generar el reporte....");
+            }
+
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)

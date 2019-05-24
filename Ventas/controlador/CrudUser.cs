@@ -236,5 +236,106 @@ namespace Ventas.controlador
             }
 
         }
+        /*para traer todos los usuario o solo uno*/
+        public void datosUserVendedor(DataGridView datagriw)
+        {
+           
+            try
+            {
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute selectClientRepor 1,1";
+                da = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                da.Fill(dt);
+                datagriw.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                datagriw = null;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+        }
+        /*para traer todos los usuario o solo uno*/
+        public void datosUserVendedorBuscar(int id,DataGridView datagriw)
+        {
+
+            try
+            {
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute selectClientRepor 2,"+id+"";
+                da = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                da.Fill(dt);
+                datagriw.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                datagriw = null;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+        }
+        /*par cliente*/
+        public void datosCliente( DataGridView datagriw)
+        {
+
+            try
+            {
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute selectClientRepor 3,1";
+                da = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                da.Fill(dt);
+                datagriw.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                datagriw = null;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+        }
+
+        /*par cliente*/
+        public void datosClienteBuscar(int id,DataGridView datagriw)
+        {
+
+            try
+            {
+                con = new SqlConnection(conex.Cadena);
+                sql = "execute selectClientRepor 4,"+id+"";
+                da = new SqlDataAdapter(sql, con);
+                dt = new DataTable();
+                da.Fill(dt);
+                datagriw.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                datagriw = null;
+            }
+            finally
+            {
+                con.Close();
+
+            }
+
+        }
     }
 }
