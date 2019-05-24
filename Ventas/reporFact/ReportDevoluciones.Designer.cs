@@ -57,6 +57,7 @@
             this.Name = "ReportDevoluciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Devoluciones";
+            this.Load += new System.EventHandler(this.ReportDevoluciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

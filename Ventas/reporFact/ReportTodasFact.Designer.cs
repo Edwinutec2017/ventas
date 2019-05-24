@@ -56,6 +56,7 @@
             this.ClientSize = new System.Drawing.Size(844, 689);
             this.Name = "ReportTodasFact";
             this.Text = "Facturas";
+            this.Load += new System.EventHandler(this.ReportTodasFact_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

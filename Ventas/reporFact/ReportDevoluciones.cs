@@ -63,6 +63,11 @@ namespace Ventas.reporFact
 
         }
 
+        private void ReportDevoluciones_Load(object sender, EventArgs e)
+        {
+            CrystalDev1.Refresh();
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();

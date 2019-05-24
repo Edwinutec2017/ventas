@@ -56,6 +56,7 @@
             this.ClientSize = new System.Drawing.Size(882, 656);
             this.Name = "FormFacVende";
             this.Text = "Vendedor";
+            this.Load += new System.EventHandler(this.FormFacVende_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

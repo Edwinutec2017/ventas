@@ -58,6 +58,11 @@ namespace Ventas.reporFact
             }
         }
 
+        private void ReportTodasFact_Load(object sender, EventArgs e)
+        {
+            CrystalTodasFact1.Refresh();
+        }
+
         private void btnHome_Click(object sender, EventArgs e)
         {
             this.Hide();

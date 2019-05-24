@@ -58,6 +58,7 @@
             this.Name = "ReporAcce";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Accesorios";
+            this.Load += new System.EventHandler(this.ReporAcce_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -70,7 +70,7 @@ namespace Ventas.reporFact
 
         private void ReporFacCliente_Load(object sender, EventArgs e)
         {
-
+            CrystalFacCliente1.Refresh();
         }
     }
 }

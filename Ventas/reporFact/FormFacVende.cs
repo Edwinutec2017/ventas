@@ -55,6 +55,11 @@ namespace Ventas.reporFact
             menu.Show();
         }
 
+        private void FormFacVende_Load(object sender, EventArgs e)
+        {
+            CrystalFactVendedor1.Refresh();
+        }
+
         public int Rol
         {
             get

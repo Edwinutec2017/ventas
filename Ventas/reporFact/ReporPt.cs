@@ -55,6 +55,11 @@ namespace Ventas.reporFact
             menu.Show();
         }
 
+        private void ReporPt_Load(object sender, EventArgs e)
+        {
+            CrystalPt1.Refresh();
+        }
+
         public int Rol
         {
             get
